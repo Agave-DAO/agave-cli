@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "faucet": "node ./scripts/agave-faucet/run.mjs",
     "add-second-token": "node ./scripts/add-second-token/run.mjs",
