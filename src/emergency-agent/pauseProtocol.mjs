@@ -2,7 +2,7 @@ import ethers from 'ethers'
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
 import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import dao from '../../dao.mjs'
+import { tao_agent, tao_voting } from '../../dao.mjs'
 
 // TODO: CHANGE TO EMERGENCY AGENT
 // 1. encode the lending pool call data, the lending pool will be called by the agent
@@ -23,14 +23,14 @@ const pauseProtocol = async (isPaused) => {
   // 2. encode agent script
   const agentCallScript = encodeCallScript([
     {
-      to: dao.tao_agent,
+      to: tao_agent,
       calldata: await encodeActCall('forward(bytes)', [lendingPoolCallScript]),
     },
   ])
 
   // 3. create the voting contract we want to interact with
   const votingApp = new ethers.Contract(
-    dao.tao_voting,
+    tao_voting,
     ['function newVote(bytes,bytes) external'],
     signer
   )
