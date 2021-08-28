@@ -1,11 +1,11 @@
-// testing garden https://aragon.1hive.org/#/0xa0aaf413a765a8a4423f097167a2669c8e066bc3
-export const dao = '0xa0aAf413a765A8A4423f097167a2669C8E066Bc3'
-export const acl = '0x595214c840fe12038c0d01b5506b31f7b9f08b9b'
-export const token_manager = '0x8aebc77a2244281ed5a79d0416688ea32c1e0e2b'
-export const cv_agent = '0xf36b0b6f145f1982c2feeeaa7239e6d332002c47'
-export const tao_agent = '0x0a38e1523c271a7d59864383dbc4a02ecbdc1911'
+// Agave garden https://gardens-xdai.1hive.org/#/garden/0x2ec8db0b2f2ed44b75c481b864f9dd1c611699c0
+export const dao = '0x2Ec8db0B2F2Ed44b75C481B864F9Dd1c611699c0'
+export const acl = '0xf8de3027b03b61865cff5fca3bdaed74f81c3c99'
+export const token_manager = '0x614645a03ce08ca4eea866e988c87cf5f3cf09b2'
+export const cv_agent = '0x2f48d50b3436bbc93b8c0bef03bb6ee0a7feb9e3'
+export const tao_agent = '0xa377585abed3e943e58174b55558a2482894ce20'
 export const emergency_admin_agent = '' // <-- this should be a separate DAO that any of the mutisig holders can call. no voting required
-export const tao_voting = '0x56946de10d67b6a9e85df5d6e5dd1868822c5503'
-export const cv_voting = '0xcb0402b2ee22f7dcc1320cb5e492a017d33a8b93'
-export const aggregator = '0x852c396de592ce0febda67b007d64d2ecb964485'
-export const agreement = '0xf3fa25bdd692d7145a2c02dff6212349502b9167'
+export const tao_voting = '0xd364bfedb4b337cb310922d79751ea408a0a4a64'
+export const cv_voting = '0x8f80003a2d65ef7ba737d7bf71af7ad1e6279ef2'
+export const aggregator = '0x853ad15ada188c43911d7c63c14b77c3d26dafa1'
+export const agreement = '0x3d5232465d997957bc7b8b18c57fe02612c599fd'
