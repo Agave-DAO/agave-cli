@@ -19,8 +19,8 @@ const addToken = async (token) => {
 
   const votingApp = TaoVoting(signer)
 
-  await votingApp.newVote(callscript, '0x')
   console.log(callscript)
+  await votingApp.newVote(callscript, '0x')
 }
 
 export default addToken
