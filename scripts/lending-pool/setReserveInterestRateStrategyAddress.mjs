@@ -4,10 +4,10 @@ import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
 import { tao_agent } from '../../dao.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const signature = ''
+const signature = 'setReserveInterestRateStrategyAddress(address,address)'
 const voteDescripton = '0x'
 
-const renameFunction = async (args) => {
+const setReserveInterestRateStrategyAddress = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -34,4 +34,4 @@ const renameFunction = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default renameFunction
+export default setReserveInterestRateStrategyAddress

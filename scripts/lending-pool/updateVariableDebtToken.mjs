@@ -4,10 +4,11 @@ import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
 import { tao_agent } from '../../dao.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
+// TODO: custom data type
 const signature = ''
 const voteDescripton = '0x'
 
-const renameFunction = async (args) => {
+const updateVariableDebtToken = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -34,4 +35,4 @@ const renameFunction = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default renameFunction
+export default updateVariableDebtToken
