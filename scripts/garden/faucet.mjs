@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import frame from '../../lib/getFrame.mjs'
 
-const run = async () => {
+const faucet = async (amount) => {
   const signer = frame()
 
   const tokenAddress = '0x68ea056d4fb87147a9a237c028b6b1476bf7b367'
@@ -10,12 +10,7 @@ const run = async () => {
     ['function mint(address to, uint256 amount) public'],
     signer
   )
-  await token.mint('0x' + 'F'.repeat(40), (1e18).toString())
+  await token.mint(ethers.fromEther(amount))
 }
 
-run()
-  .then(() => process.exit(0))
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
+export default faucet
