@@ -1,8 +1,11 @@
 import ethers from 'ethers'
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import { tao_agent, tao_voting } from '../../dao.mjs'
+import {
+  LendingPoolConfigurator,
+  tao_agent,
+  tao_voting,
+} from '../../config/addresses.mjs'
 
 // TODO: CHANGE TO EMERGENCY AGENT
 // 1. encode the lending pool call data, the lending pool will be called by the agent

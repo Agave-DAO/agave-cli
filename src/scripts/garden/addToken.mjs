@@ -1,19 +1,12 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { tao_voting, aggregator } from '../../dao.mjs'
+import { aggregator } from '../../config/addresses.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const addTokenAndPermission = async (token) => {
+const addToken = async (token) => {
   const signer = frame()
 
   const callscript = encodeCallScript([
-    {
-      to: acl,
-      calldata: await encodeActCall(
-        'createPermission(address,address,bytes32,address)',
-        [tao_voting, aggregator, keccak256('ADD_POWER_SOURCE_ROLE'), tao_voting]
-      ),
-    },
     {
       to: aggregator,
       calldata: await encodeActCall('addPowerSource(address,uint8,uint256)', [
@@ -26,8 +19,11 @@ const addTokenAndPermission = async (token) => {
 
   const votingApp = TaoVoting(signer)
 
+  console.log(`Save this callscript, you will need it for enacting the vote:
+  
+    ${callscript}
+  `)
   await votingApp.newVote(callscript, '0x')
-  console.log(callscript)
 }
 
-export default addTokenAndPermission
+export default addToken

@@ -1,13 +1,14 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import { tao_agent } from '../../dao.mjs'
+import { LendingPoolConfigurator, tao_agent } from '../../config/addresses.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const signature = 'enableBorrowingOnReserve(address,bool)'
+// TODO: How to handle custom data types
+// function batchInitReserve(InitReserveInput[] calldata input) external onlyPoolAdmin
+const signature = ''
 const voteDescripton = '0x'
 
-const enableBorrowingOnReserve = async (args) => {
+const batchInitReserve = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -34,4 +35,4 @@ const enableBorrowingOnReserve = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default enableBorrowingOnReserve
+export default batchInitReserve

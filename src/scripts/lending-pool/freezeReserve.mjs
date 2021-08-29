@@ -1,13 +1,12 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import { tao_agent } from '../../dao.mjs'
+import { LendingPoolConfigurator, tao_agent } from '../../config/addresses.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const signature = 'setReserveFactor(address,uint256)'
+const signature = 'freezeReserve(address)'
 const voteDescripton = '0x'
 
-const setReserveFactor = async (args) => {
+const freezeReserve = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -34,4 +33,4 @@ const setReserveFactor = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default setReserveFactor
+export default freezeReserve

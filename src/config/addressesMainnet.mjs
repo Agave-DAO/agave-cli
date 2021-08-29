@@ -9,3 +9,6 @@ export const tao_voting = '0xd364bfedb4b337cb310922d79751ea408a0a4a64'
 export const cv_voting = '0x8f80003a2d65ef7ba737d7bf71af7ad1e6279ef2'
 export const aggregator = '0x853ad15ada188c43911d7c63c14b77c3d26dafa1'
 export const agreement = '0x3d5232465d997957bc7b8b18c57fe02612c599fd'
+
+// protocol addresses
+export const LendingPoolConfigurator = ''

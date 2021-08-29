@@ -1,14 +1,12 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import { tao_agent } from '../../dao.mjs'
+import { LendingPoolConfigurator, tao_agent } from '../../config/addresses.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-// TODO: custom data type
-const signature = ''
+const signature = 'disableReserveStableRate(address)'
 const voteDescripton = '0x'
 
-const updateAToken = async (args) => {
+const disableReserveStableRate = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -35,4 +33,4 @@ const updateAToken = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default updateAToken
+export default disableReserveStableRate

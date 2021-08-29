@@ -1,14 +1,12 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { LendingPoolConfigurator } from '../../ProtocolAddresses.mjs'
-import { tao_agent } from '../../dao.mjs'
+import { LendingPoolConfigurator, tao_agent } from '../../config/addresses.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const signature =
-  'configureReserveAsCollateral(address asset,uint256,uint256,uint256)'
+const signature = 'setReserveFactor(address,uint256)'
 const voteDescripton = '0x'
 
-const configureReserveAsCollateral = async (args) => {
+const setReserveFactor = async (args) => {
   const signer = frame()
 
   const lendingPoolCallScript = encodeCallScript([
@@ -35,4 +33,4 @@ const configureReserveAsCollateral = async (args) => {
   await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default configureReserveAsCollateral
+export default setReserveFactor
