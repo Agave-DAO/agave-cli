@@ -1,7 +1,7 @@
 const addToken = [
     {
         type: 'input',
-        name: 'addToken',
+        name: 'token',
         message: 'Enter token Address: ',
     },
     {
