@@ -25,28 +25,28 @@ export const lendingPoolMenu = async () => {
             selection = await inquirer.prompt(
                 prompts.lendingPool.configureReserveAsCollateral
             )
-            prompts.configureReserveAsCollateral(selection)
+            await handlers.configureReserveAsCollateral(selection)
             break
 
         case 'deactivateReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.deactivateReserve
             )
-            handlers.deactivateReserve(selection)
+            await handlers.deactivateReserve(selection)
             break
 
         case 'disableBorrowingOnReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.disableBorrowingOnReserve
             )
-            handlers.disableBorrowingOnReserve(selection)
+            await handlers.disableBorrowingOnReserve(selection)
             break
 
         case 'disableReserveStableRate':
             selection = await inquirer.prompt(
                 prompts.lendingPool.disableReserveStableRate
             )
-            handlers.disableReserveStableRate(selection)
+            await handlers.disableReserveStableRate(selection)
             break
 
         case 'enableBorrowingOnReserve':
@@ -60,33 +60,33 @@ export const lendingPoolMenu = async () => {
             selection = await inquirer.prompt(
                 prompts.lendingPool.enableReserveStableRate
             )
-            handlers.enableReserveStableRate(selection)
+            await handlers.enableReserveStableRate(selection)
             break
 
         case 'freezeReserve':
             selection = await inquirer.prompt(prompts.lendingPool.freezeReserve)
-            handlers.freezeReserve(selection)
+            await handlers.freezeReserve(selection)
             break
 
         case 'setReserveFactor':
             selection = await inquirer.prompt(
                 prompts.lendingPool.setReserveFactor
             )
-            handlers.freezeReserve(selection)
+            await handlers.freezeReserve(selection)
             break
 
         case 'setReserveInterestRateStrategyAddress':
             selection = await inquirer.prompt(
                 prompts.lendingPool.setReserveInterestRateStrategyAddress
             )
-            handlers.setReserveInterestRateStrategyAddress(selection)
+            await handlers.setReserveInterestRateStrategyAddress(selection)
             break
 
         case 'unfreezeReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.unfreezeReserve
             )
-            handlers.unfreezeReserve(selection)
+            await handlers.unfreezeReserve(selection)
             break
 
         case 'updateAtoken':
