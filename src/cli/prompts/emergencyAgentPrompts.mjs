@@ -6,7 +6,7 @@ const pauseProtocol = [{
 
 const unpauseProtocol = [{
     type: 'confirm',
-    name: 'pause',
+    name: 'unpause',
     message: '⚠️ Unpause the protocol with the emergency agent?',
   }]
 
