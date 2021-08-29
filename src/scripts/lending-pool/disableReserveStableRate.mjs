@@ -33,8 +33,8 @@ const disableReserveStableRate = async (args) => {
     //    we need this call script to execute the vote
     console.log(`Save this callscript, you will need it for enacting the vote:
   
-    ${callscript}
-    
+    ${agentCallScript}
+        
   `)
     await votingApp.newVote(agentCallScript, voteDescripton)
 }
