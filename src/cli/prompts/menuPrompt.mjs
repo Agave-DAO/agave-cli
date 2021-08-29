@@ -28,10 +28,6 @@ const garden = {
             value: 'addToken'
         },
         {
-            name: 'Add Token & Permission',
-            value: 'addTokenAndPermission'
-        },
-        {
             name: 'Execute Vote',
             value: 'executeVote'
         }
