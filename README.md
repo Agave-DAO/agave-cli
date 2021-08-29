@@ -2,6 +2,8 @@
 
 > a set of scripts for creating and executing evm based votes in the Agave DAO
 
+<br/>
+
 ![gif](./doc/agave-cli.gif)
 
 <br/>
