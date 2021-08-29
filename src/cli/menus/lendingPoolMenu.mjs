@@ -1,17 +1,17 @@
 import prompts from '../prompts/index.mjs'
 import inquirer from 'inquirer'
 import handlers from '../handlers/lendingPoolHandlers.mjs'
-console.log(prompts.lendingPool.enableBorrowingOnReserve)
+
 export const lendingPoolMenu = async () => {
     const result = await inquirer.prompt(prompts.menu.lendingPool)
     let selection
+
     switch (result.lendingPool) {
         case 'activateReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.activateReserve
             )
-            // TODO:
-            console.log('handeling..', selection)
+            await handlers.activateReserve(selection)
             break
 
         case 'batchInitReserve':
@@ -19,39 +19,34 @@ export const lendingPoolMenu = async () => {
                 prompts.lendingPool.batchInitReserve
             )
             // TODO:
-            console.log('handeling..', selection)
             break
 
         case 'configureReserveAsCollateral':
             selection = await inquirer.prompt(
                 prompts.lendingPool.configureReserveAsCollateral
             )
-            // TODO:
-            console.log('handeling..', selection)
+            prompts.configureReserveAsCollateral(selection)
             break
 
         case 'deactivateReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.deactivateReserve
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.deactivateReserve(selection)
             break
 
         case 'disableBorrowingOnReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.disableBorrowingOnReserve
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.disableBorrowingOnReserve(selection)
             break
 
         case 'disableReserveStableRate':
             selection = await inquirer.prompt(
                 prompts.lendingPool.disableReserveStableRate
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.disableReserveStableRate(selection)
             break
 
         case 'enableBorrowingOnReserve':
@@ -65,38 +60,33 @@ export const lendingPoolMenu = async () => {
             selection = await inquirer.prompt(
                 prompts.lendingPool.enableReserveStableRate
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.enableReserveStableRate(selection)
             break
 
         case 'freezeReserve':
             selection = await inquirer.prompt(prompts.lendingPool.freezeReserve)
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.freezeReserve(selection)
             break
 
         case 'setReserveFactor':
             selection = await inquirer.prompt(
                 prompts.lendingPool.setReserveFactor
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.freezeReserve(selection)
             break
 
         case 'setReserveInterestRateStrategyAddress':
             selection = await inquirer.prompt(
                 prompts.lendingPool.setReserveInterestRateStrategyAddress
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.setReserveInterestRateStrategyAddress(selection)
             break
 
         case 'unfreezeReserve':
             selection = await inquirer.prompt(
                 prompts.lendingPool.unfreezeReserve
             )
-            // TODO:
-            console.log('handeling..', selection)
+            handlers.unfreezeReserve(selection)
             break
 
         case 'updateAtoken':
