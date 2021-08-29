@@ -47,7 +47,7 @@ const configureReserveAsCollateral = [
         type: 'number',
         name: 'liquidationBonus',
         message:
-            'liquidationThreshold: liquidationBonus The bonus liquidators receive to liquidate this asset. The values is always above 100%. A value of 105% means the liquidator will receive a 5% bonus',
+            'liquidationBonus: The bonus liquidators receive to liquidate this asset. The values is always above 100%. A value of 105% means the liquidator will receive a 5% bonus',
     },
 ]
 
