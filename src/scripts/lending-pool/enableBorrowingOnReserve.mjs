@@ -31,7 +31,11 @@ const enableBorrowingOnReserve = async (args) => {
 
     // 4. create transaction and log callscript. after the vote passes,
     //    we need this call script to execute the vote
-    console.log(agentCallScript)
+    console.log(`Save this callscript, you will need it for enacting the vote:
+
+    ${callscript}
+    
+    `)
     await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
