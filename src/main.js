@@ -1,5 +1,6 @@
 import prompts from './cli/prompts/index.mjs'
 import inquirer from 'inquirer'
+import Agave from './Agave.mjs'
 
 const mainMenu = async () => {
     const result = await inquirer.prompt(prompts.menu.main)
@@ -17,6 +18,16 @@ const mainMenu = async () => {
     } 
 }
 
+const gardenHandlers = {
+    addToken: async params => {
+        if (params.createPermission) {
+            await Agave.garden.addTokenAndPermission(params.token)
+        } else {
+            await Agave.garden.addToken(params.token)
+        }
+    }
+}
+
 const gardenMenu = async () => {
     const result = await inquirer.prompt(prompts.menu.garden)
     let selection
@@ -24,7 +35,7 @@ const gardenMenu = async () => {
         case 'addToken':
             selection = await inquirer.prompt(prompts.garden.addToken)
             // TODO:
-            console.log('handeling..', selection)
+            await gardenHandlers.addToken(selection)
             break
         case 'executeVote':
             selection = await inquirer.prompt(prompts.garden.executeVote)
