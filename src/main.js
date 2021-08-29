@@ -4,8 +4,6 @@ import gardenMenu from './cli/menus/gardenMenu.mjs'
 import { emergencyAgentMenu } from './cli/menus/emergencyAgentMenu.mjs'
 import { lendingPoolMenu } from './cli/menus/lendingPoolMenu.mjs'
 
-const lendingPoolHandlers = {}
-
 const main = async () => {
   const result = await inquirer.prompt(prompts.menu.main)
   switch (result.main) {
