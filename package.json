@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "eth-provider": "^0.9.3",
+    "ethereum-regex": "^1.1.13",
     "ethers": "^5.4.5",
     "inquirer": "^8.1.2",
     "web3": "^1.5.2"
