@@ -3,19 +3,19 @@ const main = {
     name: 'main',
     message: 'Main Menu',
     choices: [
-        { 
-            name: '🌼 Gardens', 
-            value: 'garden'
+        {
+            name: '🌼 Gardens',
+            value: 'garden',
         },
         {
             name: '🏦 Lending Pool',
-            value: 'lendingPool'
+            value: 'lendingPool',
         },
         {
             name: '🆘 Emergency Multisig',
-            value: 'emergencyAgent'
-        }
-    ]
+            value: 'emergencyAgent',
+        },
+    ],
 }
 
 const garden = {
@@ -23,15 +23,19 @@ const garden = {
     name: 'garden',
     message: 'Garden Menu',
     choices: [
-        { 
-            name: 'Add Token', 
-            value: 'addToken'
+        {
+            name: 'Add Token',
+            value: 'addToken',
+        },
+        {
+            name: 'Transfer Tokens (tao voting)',
+            value: 'taoTransfer',
         },
         {
             name: 'Execute Vote',
-            value: 'executeVote'
-        }
-    ]
+            value: 'executeVote',
+        },
+    ],
 }
 
 const emergencyAgent = {
@@ -39,15 +43,15 @@ const emergencyAgent = {
     name: 'emergencyAgent',
     message: 'Emergency Multisig Menu',
     choices: [
-        { 
-            name: 'Pause Protocol', 
-            value: 'pauseProtocol'
+        {
+            name: 'Pause Protocol',
+            value: 'pauseProtocol',
         },
         {
             name: 'Unpause Protocol',
-            value: 'unpauseProtocol'
-        }
-    ]
+            value: 'unpauseProtocol',
+        },
+    ],
 }
 
 const lendingPool = {
@@ -55,69 +59,72 @@ const lendingPool = {
     name: 'lendingPool',
     message: 'Lending Pool Menu',
     choices: [
-        { 
-            name: 'Activate Reserve', 
-            value: 'activateReserve'
+        {
+            name: 'Activate Reserve',
+            value: 'activateReserve',
         },
         {
             name: 'Batch Init Reserve',
-            value: 'batchInitReserve'
+            value: 'batchInitReserve',
         },
         {
             name: 'Configure Reserve As Collateral',
-            value: 'configureReserveAsCollateral'
+            value: 'configureReserveAsCollateral',
         },
         {
             name: 'Deactivate Reserve',
-            value: 'deactivateReserve'
+            value: 'deactivateReserve',
         },
         {
             name: 'Disable Borrowing On Reserve',
-            value: 'disableBorrowingOnReserve'
+            value: 'disableBorrowingOnReserve',
         },
         {
             name: 'Disable Reserve Stable Rate',
-            value: 'disableReserveStableRate'
+            value: 'disableReserveStableRate',
         },
         {
             name: 'Enable Borrowing On Reserve',
-            value: 'enableBorrowingOnReserve'
+            value: 'enableBorrowingOnReserve',
         },
         {
             name: 'Enable Reserve Stable Rate',
-            value: 'enableReserveStableRate'
+            value: 'enableReserveStableRate',
         },
         {
             name: 'Freeze Reserve',
-            value: 'freezeReserve'
+            value: 'freezeReserve',
         },
         {
             name: 'Set Reserve Factor',
-            value: 'setReserveFactor'
+            value: 'setReserveFactor',
         },
         {
             name: 'Set Reserve Interest Rate Strategy Address',
-            value: 'setReserveInterestRateStrategyAddress'
+            value: 'setReserveInterestRateStrategyAddress',
         },
         {
             name: 'Unfreeze Reserve',
-            value: 'unfreezeReserve'
+            value: 'unfreezeReserve',
         },
         {
             name: 'Update aToken',
-            value: 'updateAtoken'
+            value: 'updateAtoken',
         },
         {
             name: 'Update Variable Debt Token',
-            value: 'updateVariableDebtToken'
+            value: 'updateVariableDebtToken',
         },
         {
             name: 'Update Stable Debt Token',
-            value: 'updateStableDebtToken'
+            value: 'updateStableDebtToken',
         },
-    ]
+    ],
 }
 
 export default {
-    main, garden, lendingPool, emergencyAgent
+    main,
+    garden,
+    lendingPool,
+    emergencyAgent,
 }

@@ -11,5 +11,8 @@ const gardenHandlers = {
     executeVote: async (params) => {
         await Agave.garden.executeVote(params.calldata, params.voteId)
     },
+    taoTransfer: async (params) => {
+        await Agave.garden.taoTransfer(params.token, params.to, params.amount)
+    },
 }
 export default gardenHandlers
