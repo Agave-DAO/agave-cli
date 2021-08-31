@@ -28,7 +28,7 @@ const garden = {
             value: 'addToken',
         },
         {
-            name: 'Transfer Tokens',
+            name: 'Transfer Tokens (tao voting)',
             value: 'taoTransfer',
         },
         {
@@ -128,4 +128,3 @@ export default {
     lendingPool,
     emergencyAgent,
 }
-
