@@ -40,11 +40,6 @@ const executeVote = [
         name: 'voteId',
         message: 'Enter voteID...',
     },
-    {
-        type: 'input',
-        name: 'calldata',
-        message: 'Input the vote calldata...',
-    },
 ]
 
 export default {
