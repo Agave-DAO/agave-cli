@@ -12,3 +12,5 @@ export const agreement = '0x3d5232465d997957bc7b8b18c57fe02612c599fd'
 
 // protocol addresses
 export const LendingPoolConfigurator = ''
+export const LendingPoolAddressesProvider = ''
+export const LendingPoolAddressesProviderRegistry = ''
