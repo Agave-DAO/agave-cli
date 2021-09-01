@@ -1,6 +1,6 @@
-import Agave from '../../scripts/Agave.mjs'
+import scripts from '../../scripts/index.mjs'
 
-const lendingPoolHandlers = {
+const protocolHandlers = {
     batchInitReserve: async () => {
         // TODO:
     },
@@ -20,12 +20,12 @@ const lendingPoolHandlers = {
     enableBorrowingOnReserve: async (params) => {
         const args = [params.asset, params.stableBorrowRateEnabled]
         console.log(args)
-        await Agave.lendingPool.enableBorrowingOnReserve(args)
+        await scripts.protocol.enableBorrowingOnReserve(args)
     },
 
     disableBorrowingOnReserve: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.disableBorrowingOnReserve(args)
+        await scripts.protocol.disableBorrowingOnReserve(args)
     },
 
     configureReserveAsCollateral: async (params) => {
@@ -35,48 +35,48 @@ const lendingPoolHandlers = {
             params.liquidationThreshold,
             params.liquidationBonus,
         ]
-        await Agave.lendingPool.configureReserveAsCollateral(args)
+        await scripts.protocol.configureReserveAsCollateral(args)
     },
 
     enableReserveStableRate: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.enableReserveStableRate(args)
+        await scripts.protocol.enableReserveStableRate(args)
     },
 
     disableReserveStableRate: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.disableReserveStableRate(args)
+        await scripts.protocol.disableReserveStableRate(args)
     },
 
     activateReserve: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.activateReserve(args)
+        await scripts.protocol.activateReserve(args)
     },
 
     deactivateReserve: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.deactivateReserve(args)
+        await scripts.protocol.deactivateReserve(args)
     },
 
     freezeReserve: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.freezeReserve(args)
+        await scripts.protocol.freezeReserve(args)
     },
 
     unfreezeReserve: async (params) => {
         const args = [params.asset]
-        await Agave.lendingPool.unfreezeReserve(args)
+        await scripts.protocol.unfreezeReserve(args)
     },
 
     setReserveFactor: async (params) => {
         const args = [params.asset, params.reserveFactor]
-        await Agave.lendingPool.setReserveFactor(args)
+        await scripts.protocol.setReserveFactor(args)
     },
 
     setReserveInterestRateStrategyAddress: async (params) => {
         const args = [params.asset, params.rateStrategyAddress]
-        await Agave.lendingPool.setReserveInterestRateStrategyAddress(args)
+        await scripts.protocol.setReserveInterestRateStrategyAddress(args)
     },
 }
 
-export default lendingPoolHandlers
+export default protocolHandlers

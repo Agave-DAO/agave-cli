@@ -1,11 +1,11 @@
 import * as emergencyAgent from './emergency-agent/index.mjs'
 import * as garden from './garden/index.mjs'
-import * as lendingPool from './lending-pool/index.mjs'
+import protocol from './protocol.mjs'
 
-const Agave = {
+const scripts = {
   emergencyAgent,
   garden,
-  lendingPool,
+  protocol,
 }
 
-export default Agave
+export default scripts

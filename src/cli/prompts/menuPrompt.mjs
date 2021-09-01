@@ -8,7 +8,7 @@ const main = {
             value: 'garden',
         },
         {
-            name: '🏦 Lending Pool',
+            name: '🏦 Protocol',
             value: 'lendingPool',
         },
         {

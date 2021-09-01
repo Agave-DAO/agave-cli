@@ -1,18 +1,18 @@
-import Agave from '../../scripts/Agave.mjs'
+import scripts from '../../scripts/index.mjs'
 
 const gardenHandlers = {
     addToken: async (params) => {
         if (params.createPermission) {
-            await Agave.garden.addTokenAndPermission(params.token)
+            await scripts.garden.addTokenAndPermission(params.token)
         } else {
-            await Agave.garden.addToken(params.token)
+            await scripts.garden.addToken(params.token)
         }
     },
     executeVote: async (params) => {
-        await Agave.garden.executeVote(params.voteId)
+        await scripts.garden.executeVote(params.voteId)
     },
     taoTransfer: async (params) => {
-        await Agave.garden.taoTransfer(params.token, params.to, params.amount)
+        await scripts.garden.taoTransfer(params.token, params.to, params.amount)
     },
 }
 export default gardenHandlers

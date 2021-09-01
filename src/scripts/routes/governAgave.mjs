@@ -1,7 +1,6 @@
 import { encodeActCall, encodeCallScript } from '../../lib/evm.mjs'
 import frame from '../../lib/getFrame.mjs'
-import { tao_agent } from '../../dao.mjs'
-import { TaoVoting } from '../../lib/daoApps.mjs'
+import agave from '../../config/agave.mjs'
 /**
  * Interact with an external contract with the Gardens agent. This creates a Disputable Vote
  * @param {String} to - the address of the external contract
@@ -9,12 +8,7 @@ import { TaoVoting } from '../../lib/daoApps.mjs'
  * @param {Array} args - the arguments to pass to the external contract
  * @param {String} voteDescription - the context to pass to the disputable voting app
  */
-const callExternalContract = async (
-    to,
-    signature,
-    args,
-    voteDescription = '0x'
-) => {
+const governAgave = async (to, signature, args, voteDescription = '0x') => {
     const signer = frame()
 
     const externalCallScript = encodeCallScript([
@@ -27,7 +21,7 @@ const callExternalContract = async (
     // 2. encode agent script
     const agentCallScript = encodeCallScript([
         {
-            to: tao_agent,
+            to: agave.TAOAgent.address,
             calldata: await encodeActCall('forward(bytes)', [
                 externalCallScript,
             ]),
@@ -35,7 +29,7 @@ const callExternalContract = async (
     ])
 
     // 3. create the voting contract we want to interact with
-    const votingApp = TaoVoting(signer)
+    const votingApp = agave.TAOVoting.contract(signer)
 
     // 4. create transaction and log callscript. after the vote passes,
     //    we need this call script to execute the vote
@@ -43,4 +37,4 @@ const callExternalContract = async (
     await votingApp.newVote(agentCallScript, voteDescripton)
 }
 
-export default callExternalContract
+export default governAgave
