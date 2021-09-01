@@ -9,7 +9,7 @@ const gardenHandlers = {
         }
     },
     executeVote: async (params) => {
-        await Agave.garden.executeVote(params.calldata, params.voteId)
+        await Agave.garden.executeVote(params.voteId)
     },
     taoTransfer: async (params) => {
         await Agave.garden.taoTransfer(params.token, params.to, params.amount)
