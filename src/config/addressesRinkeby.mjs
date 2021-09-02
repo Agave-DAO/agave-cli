@@ -11,4 +11,10 @@ export const aggregator = '0xd14fDA72a00Bb4D638038897c5F7A6aE3E333acc'
 export const agreement = '0xD221638e5E94C88395c8d73Ed3Dac1078Db997b9'
 
 // protocol addresses
-export const LendingPoolConfigurator = ''
+export const LendingPoolConfigurator = '0x' + 'f'.repeat(40)
+export const LendingPoolAddressesProvider = '0x' + 'f'.repeat(40)
+export const LendingPoolAddressesProviderRegistry = '0x' + 'f'.repeat(40)
+
+// Emergency Admin DAO
+export const emergency_admin_agent = '0x' + 'f'.repeat(40) // <-- this should be a separate DAO that any of the mutisig holders can call. no voting required
+export const emergency_admin_voting = '0x' + 'f'.repeat(40) // <-- this should be a separate DAO that any of the mutisig holders can call. no voting required

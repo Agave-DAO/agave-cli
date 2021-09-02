@@ -24,16 +24,36 @@ const garden = {
     message: 'Garden Menu',
     choices: [
         {
-            name: 'Add Token',
-            value: 'addToken',
+            name: 'Execute Vote',
+            value: 'executeVote',
         },
         {
             name: 'Transfer Tokens (tao voting)',
             value: 'taoTransfer',
         },
         {
-            name: 'Execute Vote',
-            value: 'executeVote',
+            name: 'Add Power Source',
+            value: 'addToken',
+        },
+        {
+            name: 'Enable Power Source',
+            value: 'enablePowerSource',
+        },
+        {
+            name: 'Disable Power Source',
+            value: 'disablePowerSource',
+        },
+        {
+            name: 'Change Source Weight',
+            value: 'changeSourceWeight',
+        },
+        {
+            name: 'Enable Aggregator Permissions',
+            value: 'enableAggregator',
+        },
+        {
+            name: 'Enable Tao Agent Permissions',
+            value: 'enableAggregator',
         },
     ],
 }

@@ -2,7 +2,7 @@ import frame from '../../lib/getFrame.mjs'
 import filterEvents from '../../lib/filterEvents.mjs'
 import { TaoVoting } from '../../lib/daoApps.mjs'
 
-const executeVote = async (id) => {
+const callExecuteVote = async (id) => {
     const signer = frame()
     const votingApp = TaoVoting(signer)
 
@@ -34,4 +34,4 @@ const executeVote = async (id) => {
     await votingApp.executeVote(voteId, executionScript)
 }
 
-export default executeVote
+export default callExecuteVote

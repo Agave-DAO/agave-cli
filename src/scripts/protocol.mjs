@@ -1,171 +1,188 @@
-import agave from '../config/agave.mjs'
-import governAgave from './routes/governAgave.mjs'
-import pauseAgave from './routes/pauseAgave.mjs'
+import {
+    LendingPoolAddressesProvider,
+    LendingPoolAddressesProviderRegistry,
+    LendingPoolConfigurator,
+} from '../config/addresses.mjs'
+import governAgave from './routes/callAgave.mjs'
+import pauseAgave from './routes/callMultisig.mjs'
 
-const poolConfig = agave.LendingPoolConfigurator
-const addressProvider = agave.LendingPoolAddressesProvider
-const addressRegistery = agave.LendingPoolAddressesProviderRegistry
+export const pauseProtocol = async (args) => pauseAgave(args)
 
-export default {
-    pauseProtocol: async (args) => pauseAgave(args),
-    activateReserve: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.activateReserve, args)
-    },
-    batchInitReserve: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.batchInitReserve, args)
-    },
-    configureReserveAsCollateral: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.configureReserveAsCollateral,
-            args
-        )
-    },
-    deactivateReserve: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.deactivateReserve, args)
-    },
-    disableBorrowingOnReserve: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.disableBorrowingOnReserve,
-            args
-        )
-    },
-    disableReserveStableRate: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.disableReserveStableRate,
-            args
-        )
-    },
-    enableBorrowingOnReserve: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.enableBorrowingOnReserve,
-            args
-        )
-    },
-    enableReserveStableRate: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.enableReserveStableRate,
-            args
-        )
-    },
-    freezeReserve: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.freezeReserve, args)
-    },
-    setReserveFactor: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.setReserveFactor, args)
-    },
-    setReserveInterestRateStrategyAddress: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.setReserveInterestRateStrategyAddress,
-            args
-        )
-    },
-    unfreezeReserve: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.unfreezeReserve, args)
-    },
-    updateAtoken: async (args) => {
-        governAgave(poolConfig.address, poolConfig.sig.updateAtoken, args)
-    },
-    updateVariableDebtToken: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.updateVariableDebtToken,
-            args
-        )
-    },
-    updateStableDebtToken: async (args) => {
-        governAgave(
-            poolConfig.address,
-            poolConfig.sig.updateStableDebtToken,
-            args
-        )
-    },
-    //////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
-    setMarketId: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setMarketId,
-            args
-        )
-    },
-    setAddressAsProxy: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setAddressAsProxy,
-            args
-        )
-    },
-    setLendingPoolImpl: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setLendingPoolImpl,
-            args
-        )
-    },
-    setLendingPoolConfiguratorImpl: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setLendingPoolConfiguratorImpl,
-            args
-        )
-    },
-    setLendingPoolCollateralManager: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setLendingPoolCollateralManager,
-            args
-        )
-    },
-    setPoolAdmin: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setPoolAdmin,
-            args
-        )
-    },
-    setEmergencyAdmin: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setEmergencyAdmin,
-            args
-        )
-    },
-    setPriceOracle: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setPriceOracle,
-            args
-        )
-    },
-    setLendingRateOracle: async (args) => {
-        governAgave(
-            addressProvider.address,
-            addressProvider.sig.setLendingRateOracle,
-            args
-        )
-    },
-    //////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
-    registerAddressesProvider: async (args) => {
-        governAgave(
-            addressRegistery.address,
-            addressRegistery.sig.registerAddressesProvider,
-            args
-        )
-    },
-    unregisterAddressesProvider: async (args) => {
-        governAgave(
-            addressRegistery.address,
-            addressRegistery.sig.unregisterAddressesProvider,
-            args
-        )
-    },
+export const activateReserve = async (args) => {
+    console.log(args)
+    await governAgave(LendingPoolConfigurator, 'activateReserve(address)', args)
+}
+export const batchInitReserve = async (args) => {
+    await governAgave(LendingPoolConfigurator, 'TODO:', args)
+}
+
+export const configureReserveAsCollateral = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'configureReserveAsCollateral(address asset,uint256,uint256,uint256)',
+        args
+    )
+}
+
+export const deactivateReserve = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'deactivateReserve(address)',
+        args
+    )
+}
+
+export const disableBorrowingOnReserve = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'disableBorrowingOnReserve(address)',
+        args
+    )
+}
+
+export const disableReserveStableRate = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'disableReserveStableRate(address)',
+        args
+    )
+}
+
+export const enableBorrowingOnReserve = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'enableBorrowingOnReserve(address,bool)',
+        args
+    )
+}
+
+export const enableReserveStableRate = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'enableReserveStableRate(address)',
+        args
+    )
+}
+
+export const freezeReserve = async (args) => {
+    await governAgave(LendingPoolConfigurator, 'freezeReserve(address)', args)
+}
+
+export const setReserveFactor = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'setReserveFactor(address,uint256)',
+        args
+    )
+}
+
+export const setReserveInterestRateStrategyAddress = async (args) => {
+    await governAgave(
+        LendingPoolConfigurator,
+        'setReserveInterestRateStrategyAddress(address,address)',
+        args
+    )
+}
+
+export const unfreezeReserve = async (args) => {
+    await governAgave(LendingPoolConfigurator, 'unfreezeReserve(address)', args)
+}
+
+// TODO:
+export const updateAtoken = async (args) => {
+    await governAgave(LendingPoolConfigurator, '...', args)
+}
+
+// TODO:
+export const updateVariableDebtToken = async (args) => {
+    await governAgave(LendingPoolConfigurator, '...', args)
+}
+
+// TODO:
+export const updateStableDebtToken = async (args) => {
+    await governAgave(LendingPoolConfigurator, '...', args)
+}
+
+export const setMarketId = async (args) => {
+    await governAgave(LendingPoolAddressesProvider, 'setMarketId(string)', args)
+}
+
+export const setAddressAsProxy = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setAddressAsProxy(bytes32,address)',
+        args
+    )
+}
+
+export const setLendingPoolImpl = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setLendingPoolImpl(address)',
+        args
+    )
+}
+
+export const setLendingPoolConfiguratorImpl = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setLendingPoolConfiguratorImpl(address)',
+        args
+    )
+}
+
+export const setLendingPoolCollateralManager = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setLendingPoolCollateralManager(address)',
+        args
+    )
+}
+
+export const setPoolAdmin = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setPoolAdmin(address)',
+        args
+    )
+}
+
+export const setEmergencyAdmin = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setEmergencyAdmin(address)',
+        args
+    )
+}
+
+export const setPriceOracle = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setPriceOracle(address)',
+        args
+    )
+}
+
+export const setLendingRateOracle = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProvider,
+        'setLendingRateOracle(address)',
+        args
+    )
+}
+
+export const registerAddressesProvider = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProviderRegistry,
+        'registerAddressesProvider(address,uint256)',
+        args
+    )
+}
+
+export const unregisterAddressesProvider = async (args) => {
+    await governAgave(
+        LendingPoolAddressesProviderRegistry,
+        'unregisterAddressesProvider(address)',
+        args
+    )
 }

@@ -28,9 +28,40 @@ const addToken = [
         validate: (answer) => validate.address(answer),
     },
     {
+        type: 'list',
+        name: 'type',
+        message: 'Type of token to add: ',
+        choices: [
+            {
+                name: 'ERC20 With Checkpointing',
+                value: 1,
+            },
+            {
+                name: 'ERC900 ',
+                value: 2,
+            },
+        ],
+    },
+    {
+        type: 'number',
+        name: 'weight',
+        message: 'Enter token weight: ',
+    },
+]
+
+const enableAggregator = [
+    {
         type: 'confirm',
-        name: 'createPermission',
-        message: 'do you also want to create the ADD_POWER_SOURCE_ROLE?',
+        name: 'enable',
+        message: 'Enable Voting Aggregator permissions',
+    },
+]
+
+const enableTaoTransfers = [
+    {
+        type: 'confirm',
+        name: 'enable',
+        message: 'Enable Tao Agent permissions',
     },
 ]
 
@@ -42,8 +73,45 @@ const executeVote = [
     },
 ]
 
+const enablePowerSource = [
+    {
+        type: 'input',
+        name: 'token',
+        message: 'Enter token Address: ',
+        validate: (answer) => validate.address(answer),
+    },
+]
+
+const disablePowerSource = [
+    {
+        type: 'input',
+        name: 'token',
+        message: 'Enter token Address: ',
+        validate: (answer) => validate.address(answer),
+    },
+]
+
+const changeSourceWeight = [
+    {
+        type: 'input',
+        name: 'token',
+        message: 'Enter token Address: ',
+        validate: (answer) => validate.address(answer),
+    },
+    {
+        type: 'number',
+        name: 'weight',
+        message: 'Enter token weight: ',
+    },
+]
+
 export default {
     taoTransfer,
     addToken,
     executeVote,
+    enableAggregator,
+    enableTaoTransfers,
+    enablePowerSource,
+    disablePowerSource,
+    changeSourceWeight,
 }
