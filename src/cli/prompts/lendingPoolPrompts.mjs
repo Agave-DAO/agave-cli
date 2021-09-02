@@ -1,4 +1,3 @@
-import { setLendingPoolImpl } from '../../scripts/protocol.mjs'
 import validate from '../handlers/validate.mjs'
 
 // TODO: CUSTOM SOLIDITY DATA TYPES
