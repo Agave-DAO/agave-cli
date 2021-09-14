@@ -34,6 +34,40 @@
       "artifacts": [
         "console"
       ]
+    },
+    "/home/hornet/projects/agave/agave-hardhat-scripts/contracts/LendingPoolConfigurator.sol": {
+      "lastModificationDate": 1631634514234,
+      "contentHash": "64caabf9ef194ff4d95179be6e54d5fc",
+      "sourceName": "contracts/LendingPoolConfigurator.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LendingPoolMock"
+      ]
     }
   }
 }

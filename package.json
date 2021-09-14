@@ -1,21 +1,26 @@
 {
-  "name": "hardhat-project",
-  "devDependencies": {
-    "@typechain/ethers-v5": "^7.1.0",
-    "@types/chai": "^4.2.21",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^16.9.1",
-    "chai": "^4.3.4",
-    "hardhat-typechain": "^0.3.5",
-    "ts-generator": "^0.1.1",
-    "ts-node": "^10.2.1",
-    "typechain": "^5.1.2",
-    "typescript": "^4.4.3"
-  },
-  "dependencies": {
-    "@commonsswarm/evmcrispr": "^0.0.2",
-    "dotenv": "^10.0.0",
-    "eth-provider": "^0.9.4",
-    "hardhat": "^2.6.4"
-  }
+    "name": "hardhat-project",
+    "devDependencies": {
+        "@tenderly/hardhat-tenderly": "^1.0.12",
+        "@typechain/ethers-v5": "^7.1.0",
+        "@types/chai": "^4.2.21",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^16.9.1",
+        "@types/signale": "^1.4.2",
+        "chai": "^4.3.4",
+        "hardhat-typechain": "^0.3.5",
+        "ts-generator": "^0.1.1",
+        "ts-node": "^10.2.1",
+        "typechain": "^5.1.2",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {
+        "@commonsswarm/evmcrispr": "^0.0.2",
+        "dotenv": "^10.0.0",
+        "eth-provider": "^0.9.4",
+        "hardhat": "^2.6.4",
+        "ora": "^6.0.1",
+        "signale": "^1.4.0",
+        "thread-spin": "^1.3.0"
+    }
 }

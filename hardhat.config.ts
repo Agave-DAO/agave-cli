@@ -1,21 +1,9 @@
-import { task, HardhatUserConfig } from "hardhat/config";
-import "@nomiclabs/hardhat-waffle";
+import { HardhatUserConfig } from "hardhat/config";
 import "hardhat-typechain";
+import "@tenderly/hardhat-tenderly"
+import "@nomiclabs/hardhat-waffle";
 import 'dotenv/config'
-
-import { EVMcrispr } from '@commonsswarm/evmcrispr'
-
-
-
-
-
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-  const accounts = await hre.ethers.getSigners();
-
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
+import './tasks'
 
 
 
@@ -27,7 +15,20 @@ const config: HardhatUserConfig = {
   // Your type-safe config goes here
   solidity: {
     compilers: [{ version: "0.8.0", settings: {} }],
+
   },
+  networks: {
+    rinkeby: {
+      url: process.env.ALCHEMY_RINKEBY,
+      accounts: {
+        mnemonic: process.env.SEED
+      }
+    }
+  },
+  tenderly: {
+    project: "agave-cli",
+    username: "greenhornet",
+  }
 };
 
 export default config
