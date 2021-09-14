@@ -1,5 +1,5 @@
 import hre from 'hardhat'
-import addresses from '../addresses'
+import addresses from '../constants/addresses'
 
 async function main() {
     const network = hre.network.name
@@ -8,11 +8,6 @@ async function main() {
     const lendingPool = await MLendingPool.deploy(agent)
     await lendingPool.deployed()
     console.log('LendingPool deployed to:', lendingPool.address)
-
-    await hre.tenderly.verify({
-        name: 'LendingPoolMock',
-        addresses: lendingPool.address
-    })
 }
 
 // We recommend this pattern to be able to use async/await everywhere
