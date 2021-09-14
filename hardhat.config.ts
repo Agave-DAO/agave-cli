@@ -11,12 +11,10 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
   for (const account of accounts) {
     console.log(account.address);
-    console.log(process.env.TEST)
   }
 });
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
+
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
