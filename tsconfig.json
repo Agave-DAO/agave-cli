@@ -1,12 +1,16 @@
 {
-    "compilerOptions": {
-      "target": "es2018",
-      "module": "CommonJS",
-      "strict": false,
-      "esModuleInterop": true,
-      "outDir": "dist"
-    },
-    "include": ["./scripts", "./test", "addresses.ts"],
-    "files": ["./hardhat.config.ts", "./newFile.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es2017","es2015","dom","es6"
+     ],
+    "module": "commonjs",
+    "sourceMap": false,
+    "strict": false,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "resolveJsonModule": true
+  },
+  "include": ["./scripts", "./test"],
+  "files": ["./hardhat.config.ts"]
+}

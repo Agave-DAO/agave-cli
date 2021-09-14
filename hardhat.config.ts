@@ -1,34 +1,66 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "hardhat-typechain";
-import "@tenderly/hardhat-tenderly"
+import { config as dotEnvConfig } from "dotenv";
+dotEnvConfig();
+
+import "@typechain/hardhat";
+import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
-import 'dotenv/config'
-import './tasks'
 
 
+import { HardhatUserConfig } from "hardhat/types";
+import {
+  MAINNET_PRIVATE_KEY,
+  NETWORK_FORK_URL,
+  NETWORK_MAINNET_URL,
+  NETWORK_RINKEBY_URL,
+  NETWORK_ROPSTEN_URL,
+  RINKEBY_PRIVATE_KEY,
+  ROPSTEN_PRIVATE_KEY,
+} from "./constants";
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
+import "./tasks/index";
 
 const config: HardhatUserConfig = {
-  // Your type-safe config goes here
+  defaultNetwork: "hardhat",
   solidity: {
-    compilers: [{ version: "0.8.0", settings: {} }],
-
+    compilers: [
+      {
+        version: "0.8.4",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
+    ],
   },
   networks: {
+    hardhat: {
+      initialBaseFeePerGas: 0, // workaround from https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136 . Remove when that issue is closed.
+      allowUnlimitedContractSize: true,
+      forking: {
+        url: NETWORK_FORK_URL,
+        blockNumber: 12984971,
+      },
+      // hardfork: "berlin"
+    },
+    mainnet: {
+      url: NETWORK_MAINNET_URL,
+      accounts: [MAINNET_PRIVATE_KEY],
+    },
     rinkeby: {
-      url: process.env.ALCHEMY_RINKEBY,
-      accounts: {
-        mnemonic: process.env.SEED
-      }
-    }
+      url: NETWORK_RINKEBY_URL,
+      accounts: [RINKEBY_PRIVATE_KEY],
+    },
+    ropsten: {
+      url: NETWORK_ROPSTEN_URL,
+      accounts: [ROPSTEN_PRIVATE_KEY],
+    },
   },
-  tenderly: {
-    project: "agave-cli",
-    username: "greenhornet",
+  typechain: {
+    outDir: "typechain",
+    target: "ethers-v5",
   }
 };
 
-export default config
+export default config;

@@ -1,3 +1,13 @@
 node_modules
 .env
-tenderly.yaml
+.eslintcache
+package-lock.json
+yarn.lock
+yarn-error.log
+coverage.json
+
+#Hardhat files
+cache
+artifacts
+typechain
+coverage

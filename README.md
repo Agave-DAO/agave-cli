@@ -1,15 +1,45 @@
-# Basic Sample Hardhat Project
+# Hardhat Typescript Template
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Boilerplate Hardhat project
 
-Try running some of the following tasks:
+## Installation
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+```
+yarn && yarn install
+yarn prepare
+```
+
+## Available Functionalities
+
+### Clean and compile contracts
+```
+yarn build
+```
+
+### Run test
+```
+yarn test
+```
+
+### Check test coverage
+```
+yarn coverage
+```
+
+### Run script
+```
+yarn hardhat run PATH_TO_SCRIPT
+```
+
+### Run task
+```
+yarn hardhat HARDHAT_TASK
+```
+
+### Etherscan verification
+Deploy your contract address first before verifying.
+
+```
+yarn hardhat run --network ropsten scripts/deploy.ts
+yarn verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello"
 ```
