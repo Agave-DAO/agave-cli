@@ -1,17 +1,16 @@
-export default 
-    {
-		"interval": 80,
-		"frames": [
-			"( ●    )",
-			"(  ●   )",
-			"(   ●  )",
-			"(    ● )",
-			"(     ●)",
-			"(    ● )",
-			"(   ●  )",
-			"(  ●   )",
-			"( ●    )",
-			"(●     )"
-		],
-        "color": 'yellowBright'
-	}
+export default {
+    interval: 80,
+    frames: [
+        '( ●    )',
+        '(  ●   )',
+        '(   ●  )',
+        '(    ● )',
+        '(     ●)',
+        '(    ● )',
+        '(   ●  )',
+        '(  ●   )',
+        '( ●    )',
+        '(●     )',
+    ],
+    color: 'yellowBright',
+}
