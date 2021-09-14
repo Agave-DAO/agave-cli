@@ -11,7 +11,6 @@ export default {
         UnipoolAddress: '0x0be6CF9803A7F5cE6C0f576807DC5fC39293c1E6',
         UnipoolDepositorAddress: '0x8299dC453E5621972026Ac65217668a7135fFEB1',
         ///
-        LendingPoolConfigurator: '0xaeB73F2ab2634C6759288d4d912227009E5bd55b'
-    }
+        LendingPoolConfigurator: '0xaeB73F2ab2634C6759288d4d912227009E5bd55b',
+    },
 }
-
