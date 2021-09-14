@@ -1,27 +1,20 @@
 {
-  "name": "agave-agent-scripts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "faucet": "node ./scripts/agave-faucet/run.mjs",
-    "add-second-token": "node ./scripts/add-second-token/run.mjs",
-    "pause-lending-pool": "node ./scripts/pause-lending-pool/run.mjs",
-    "unpause-lending-pool": "node ./scripts/unpause-lending-pool/run.mjs",
-    "execute-vote": "node ./scripts/execute-vote/run"
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@typechain/ethers-v5": "^7.1.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.1",
+    "chai": "^4.3.4",
+    "hardhat-typechain": "^0.3.5",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.2.1",
+    "typechain": "^5.1.2",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "eth-provider": "^0.9.3",
-    "ethereum-regex": "^1.1.13",
-    "ethers": "^5.4.5",
-    "inquirer": "^8.1.2",
-    "web3": "^1.5.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "prettier": "2.3.2"
+    "@commonsswarm/evmcrispr": "^0.0.2",
+    "dotenv": "^10.0.0",
+    "hardhat": "^2.6.4"
   }
 }

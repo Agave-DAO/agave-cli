@@ -1,20 +1,15 @@
-# Agave DAO Scripts
+# Basic Sample Hardhat Project
 
-> a set of scripts for creating and executing evm based votes in the Agave DAO
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-<br/>
+Try running some of the following tasks:
 
-![gif](./doc/agave-cli.gif)
-
-<br/>
-
-## 🏃🏾‍♂️ Quick Start
-
-1. Install [Frame](https://frame.sh) and set up a signer (hardware wallets work great)
-2. ensure your signer has collatoral deposited in the DAO and signed the agreement
-3. clone this repo and insall with `yarn`
-4. DAO and Protocol addresses are kept in `./sec/config/addresses.mjs` 
-5. run the cli with `node ./src/main.js` 
-
-## 🆘 Help
-These EVM Scripts are rough around the edges! If you have any questions ask in [discord](https://discord.gg/)
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
