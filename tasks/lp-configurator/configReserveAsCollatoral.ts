@@ -7,7 +7,7 @@ import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigu
 import validate from '../lib/validateAddress'
 
 task(
-    'lp-config:config-reserve-as-collat',
+    'lp-config:config-res-as-collat',
     'Configure a reserve as collatoral'
 ).setAction(async (_, { ethers }) => {
     const signer = (await ethers.getSigners())[0]

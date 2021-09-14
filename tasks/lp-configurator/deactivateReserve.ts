@@ -6,7 +6,7 @@ import inquirer from 'inquirer'
 import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'
 import validate from '../lib/validateAddress'
 
-task('lp-config:activate-res', 'Activate Reserve asset').setAction(
+task('lp-config:deactivate-res', 'Deactivate Reserve asset').setAction(
     async (_, { ethers }) => {
         const signer = (await ethers.getSigners())[0]
         const input = await inquirer.prompt([
@@ -22,7 +22,7 @@ task('lp-config:activate-res', 'Activate Reserve asset').setAction(
 
         const spinnies = new Spinnies({ spinner })
         spinnies.add('1', {
-            text: 'Creating Vote: activateReserve(address)',
+            text: 'Creating Vote: dectivateReserve(address)',
             color: 'yellowBright',
         })
 
@@ -30,7 +30,7 @@ task('lp-config:activate-res', 'Activate Reserve asset').setAction(
             signer,
             'activateReserve(address)',
             args,
-            'Activate Reserve'
+            'Dectivate Reserve'
         )
 
         spinnies.succeed('1', { text: `TX: ${tx.transactionHash}` })

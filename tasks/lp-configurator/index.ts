@@ -1,2 +1,5 @@
 import './activateReserve'
 import './configReserveAsCollatoral'
+import './deactivateReserve'
+import './disableBorrowingOnReserve'
+import './disableReserveStableRate'
