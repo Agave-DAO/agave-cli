@@ -5,7 +5,8 @@ import addresses from '../../../constants/addresses'
 const callLendingPoolConfigurator = async (
     signer: Signer,
     signature: string,
-    args: Array<any>
+    args: Array<any>,
+    context: string
 ) => {
     const network = (await signer.provider.getNetwork()).name
     const { DAO, LendingPoolConfigurator } = addresses[network]
@@ -14,7 +15,7 @@ const callLendingPoolConfigurator = async (
     const tx = await evm.forward(
         [evm.act('agent', LendingPoolConfigurator, signature, args)],
         ['disputable-voting.open'],
-        { context: signature }
+        { context }
     )
     return tx
 }

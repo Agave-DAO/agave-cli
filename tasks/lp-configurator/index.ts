@@ -1,1 +1,2 @@
 import './activateReserve'
+import './configReserveAsCollatoral'

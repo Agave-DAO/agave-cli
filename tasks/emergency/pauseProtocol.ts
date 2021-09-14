@@ -17,7 +17,8 @@ task('emergency:pause', 'Pauses the protocol').setAction(
         const tx = await callLendingPoolConfigurator(
             signer,
             'setPoolPause(bool)',
-            [true]
+            [true],
+            'Pause Protocol'
         )
 
         spinnies.succeed('1', { text: `TX: ${tx.transactionHash}` })

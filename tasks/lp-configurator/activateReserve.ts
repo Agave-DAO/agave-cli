@@ -29,7 +29,8 @@ task('lp-config:activate-reserve', 'Activate Reserve asset').setAction(
         const tx = await callLendingPoolConfigurator(
             signer,
             'activateReserve(address)',
-            args
+            args,
+            'Activate Reserve'
         )
 
         spinnies.succeed('1', { text: `TX: ${tx.transactionHash}` })
