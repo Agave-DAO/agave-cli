@@ -17,7 +17,6 @@ const callEmergencyDAO = async (
         ['voting'],
         { context }
     )
-
     return tx
 }
 

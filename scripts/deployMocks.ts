@@ -2,8 +2,6 @@ import hre from 'hardhat'
 import addresses from '../constants/addresses'
 import Spinnies from 'spinnies'
 import spinner from '../tasks/lib/spinner'
-import { Transaction } from '@ethersproject/transactions'
-import { TransactionReceipt } from '@ethersproject/abstract-provider'
 
 async function main() {
     const network = hre.network.name
@@ -44,14 +42,14 @@ async function main() {
         color: 'yellowBright',
     })
     await addressProvider.setPoolAdmin(TaoAgent)
-    spinnies.succeed('3', { text: `Done!` })
+    spinnies.succeed('3', { text: `PoolAdmin Updated!` })
 
     spinnies.add('4', {
         text: 'Setting: EmergencyAdmin',
         color: 'yellowBright',
     })
     await addressProvider.setEmergencyAdmin(EmergencyAgent)
-    spinnies.succeed('4', { text: `Done!` })
+    spinnies.succeed('4', { text: `EmergencyAdmin Updated!` })
 }
 
 // We recommend this pattern to be able to use async/await everywhere

@@ -2,7 +2,7 @@ import Spinnies from 'spinnies'
 import spinner from '../lib/spinner'
 import { task } from 'hardhat/config'
 import '@nomiclabs/hardhat-waffle'
-import callConfigurator from '../lib/EVMcrispr/callConfigurator'
+import callEmergencyDAO from '../lib/EVMcrispr/callEmergencyDAO'
 
 task('emergency:unpause', 'Unpauses the protocol').setAction(
     async (_, { ethers }) => {
@@ -14,7 +14,7 @@ task('emergency:unpause', 'Unpauses the protocol').setAction(
             color: 'yellowBright',
         })
 
-        const tx = await callConfigurator(
+        const tx = await callEmergencyDAO(
             signer,
             'setPoolPause(bool)',
             [false],

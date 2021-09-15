@@ -1,12 +1,12 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1631645150534,
-      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
-      "sourceName": "hardhat/console.sol",
+    "/home/hornet/projects/agave/agave-cli/contracts/Context.sol": {
+      "lastModificationDate": 1631703946507,
+      "contentHash": "b23f1bf925cccdd0ba4a054aae9ab8f4",
+      "sourceName": "contracts/Context.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.6.12",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -29,14 +29,121 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.4.22 <0.9.0"
+        "0.6.12"
       ],
       "artifacts": [
-        "console"
+        "Context"
       ]
     },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/LendingPoolConfigurator.sol": {
-      "lastModificationDate": 1631693619345,
+    "/home/hornet/projects/agave/agave-cli/contracts/Ownable.sol": {
+      "lastModificationDate": 1631703946507,
+      "contentHash": "00d44e652def98a9799ffb3093f56e40",
+      "sourceName": "contracts/Ownable.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/hornet/projects/agave/agave-cli/contracts/LendingPoolAddressProvider.sol": {
+      "lastModificationDate": 1631703946507,
+      "contentHash": "bf1703852a7c7394895e3a9f973ad19d",
+      "sourceName": "contracts/LendingPoolAddressProvider.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./ILendingPoolAddressesProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "LendingPoolAddressesProvider"
+      ]
+    },
+    "/home/hornet/projects/agave/agave-cli/contracts/ILendingPoolAddressesProvider.sol": {
+      "lastModificationDate": 1631703946507,
+      "contentHash": "a2aa97dd079073449c93d4c35030cbd4",
+      "sourceName": "contracts/ILendingPoolAddressesProvider.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "ILendingPoolAddressesProvider"
+      ]
+    },
+    "/home/hornet/projects/agave/agave-cli/contracts/LendingPoolConfigurator.sol": {
+      "lastModificationDate": 1631703946507,
       "contentHash": "a547c278897ff6b2fe7b4b5d8ef843e6",
       "sourceName": "contracts/LendingPoolConfigurator.sol",
       "solcConfig": {
@@ -73,149 +180,8 @@
         "LendingPoolConfigurator"
       ]
     },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/Context.sol": {
-      "lastModificationDate": 1631693619020,
-      "contentHash": "b23f1bf925cccdd0ba4a054aae9ab8f4",
-      "sourceName": "contracts/Context.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.6.12"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/Ownable.sol": {
-      "lastModificationDate": 1631693619379,
-      "contentHash": "00d44e652def98a9799ffb3093f56e40",
-      "sourceName": "contracts/Ownable.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./Context.sol"
-      ],
-      "versionPragmas": [
-        "^0.6.0"
-      ],
-      "artifacts": [
-        "Ownable"
-      ]
-    },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/LendingPoolAddressProvider.sol": {
-      "lastModificationDate": 1631693619275,
-      "contentHash": "bf1703852a7c7394895e3a9f973ad19d",
-      "sourceName": "contracts/LendingPoolAddressProvider.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./Ownable.sol",
-        "./ILendingPoolAddressesProvider.sol"
-      ],
-      "versionPragmas": [
-        "0.6.12"
-      ],
-      "artifacts": [
-        "LendingPoolAddressesProvider"
-      ]
-    },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/ILendingPoolAddressesProvider.sol": {
-      "lastModificationDate": 1631693619106,
-      "contentHash": "a2aa97dd079073449c93d4c35030cbd4",
-      "sourceName": "contracts/ILendingPoolAddressesProvider.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.6.12"
-      ],
-      "artifacts": [
-        "ILendingPoolAddressesProvider"
-      ]
-    },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/Errors.sol": {
-      "lastModificationDate": 1631693619076,
+    "/home/hornet/projects/agave/agave-cli/contracts/Errors.sol": {
+      "lastModificationDate": 1631703946507,
       "contentHash": "10348180221e5b68c054526581936f6c",
       "sourceName": "contracts/Errors.sol",
       "solcConfig": {
@@ -248,8 +214,8 @@
         "Errors"
       ]
     },
-    "/Users/abdullahahsan/temp/hardhat-typescript-template/contracts/ILendingPoolConfigurator.sol": {
-      "lastModificationDate": 1631693619131,
+    "/home/hornet/projects/agave/agave-cli/contracts/ILendingPoolConfigurator.sol": {
+      "lastModificationDate": 1631703946507,
       "contentHash": "ce3f9139f005933aab80dd52758675c5",
       "sourceName": "contracts/ILendingPoolConfigurator.sol",
       "solcConfig": {
