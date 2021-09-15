@@ -1,5 +1,5 @@
 import Spinnies from 'spinnies'
-import spinner from '../spinner'
+import spinner from '../lib/spinner'
 import { task } from 'hardhat/config'
 import '@nomiclabs/hardhat-waffle'
 import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'

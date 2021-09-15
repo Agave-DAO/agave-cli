@@ -1,7 +1,7 @@
 import '@nomiclabs/hardhat-waffle'
 import { task } from 'hardhat/config'
 import Spinnies from 'spinnies'
-import spinner from '../spinner'
+import spinner from '../lib/spinner'
 import inquirer from 'inquirer'
 import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'
 import validate from '../lib/validateAddress'
