@@ -3,7 +3,7 @@ import { task } from 'hardhat/config'
 import Spinnies from 'spinnies'
 import spinner from '../lib/spinner'
 import inquirer from 'inquirer'
-import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'
+import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
 task(
@@ -28,7 +28,7 @@ task(
         color: 'yellowBright',
     })
 
-    const tx = await callLendingPoolConfigurator(
+    const tx = await callConfigurator(
         signer,
         'disableReserveStableRate(address)',
         args,

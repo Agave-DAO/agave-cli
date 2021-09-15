@@ -2,7 +2,7 @@ import Spinnies from 'spinnies'
 import spinner from '../lib/spinner'
 import { task } from 'hardhat/config'
 import '@nomiclabs/hardhat-waffle'
-import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'
+import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 
 task('emergency:pause', 'Pauses the protocol').setAction(
     async (_, { ethers }) => {
@@ -14,7 +14,7 @@ task('emergency:pause', 'Pauses the protocol').setAction(
             color: 'yellowBright',
         })
 
-        const tx = await callLendingPoolConfigurator(
+        const tx = await callConfigurator(
             signer,
             'setPoolPause(bool)',
             [true],

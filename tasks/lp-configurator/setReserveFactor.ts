@@ -3,7 +3,7 @@ import { task } from 'hardhat/config'
 import Spinnies from 'spinnies'
 import spinner from '../lib/spinner'
 import inquirer from 'inquirer'
-import callLendingPoolConfigurator from '../lib/EVMcrispr/callLendingPoolConfigurator'
+import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
 task('lp-config:set-res-factor', 'Set reserve factor').setAction(
@@ -31,7 +31,7 @@ task('lp-config:set-res-factor', 'Set reserve factor').setAction(
             color: 'yellowBright',
         })
 
-        const tx = await callLendingPoolConfigurator(
+        const tx = await callConfigurator(
             signer,
             'setReserveFactor(address,uint256)',
             args,
