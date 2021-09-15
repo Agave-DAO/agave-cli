@@ -14,7 +14,7 @@ const callEmergencyDAO = async (
     const evm = await EVMcrispr.create(signer, EmergencyDAO)
     const tx = await evm.forward(
         [evm.act('agent', LendingPoolConfigurator, signature, args)],
-        ['voting'],
+        ['token-manager', 'voting'],
         { context }
     )
     return tx
