@@ -7,7 +7,7 @@ import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
 task(
-    'lp-config:set-res-interest-strat',
+    'lpc:set-res-interest-strat',
     'Set reserve interest rate strategy address'
 ).setAction(async (_, { ethers }) => {
     const signer = (await ethers.getSigners())[0]

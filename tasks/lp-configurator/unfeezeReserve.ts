@@ -6,7 +6,7 @@ import inquirer from 'inquirer'
 import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
-task('lp-config:unfreeze-res', 'Unfreeze Reserve asset').setAction(
+task('lpc:unfreeze-res', 'Unfreeze Reserve asset').setAction(
     async (_, { ethers }) => {
         const signer = (await ethers.getSigners())[0]
         const input = await inquirer.prompt([

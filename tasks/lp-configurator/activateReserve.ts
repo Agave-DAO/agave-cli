@@ -6,7 +6,7 @@ import inquirer from 'inquirer'
 import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
-task('lp-config:activate-res', 'Activate Reserve asset').setAction(
+task('lpc:activate-res', 'Activate Reserve asset').setAction(
     async (_, { ethers }) => {
         const signer = (await ethers.getSigners())[0]
         const input = await inquirer.prompt([

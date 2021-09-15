@@ -7,7 +7,7 @@ import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
 task(
-    'lp-config:enable-borrow-on-res',
+    'lpc:enable-borrow-on-res',
     'Ensable borrowing on reserve asset'
 ).setAction(async (_, { ethers }) => {
     const signer = (await ethers.getSigners())[0]

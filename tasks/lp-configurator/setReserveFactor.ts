@@ -6,7 +6,7 @@ import inquirer from 'inquirer'
 import callConfigurator from '../lib/EVMcrispr/callConfigurator'
 import validate from '../lib/validateAddress'
 
-task('lp-config:set-res-factor', 'Set reserve factor').setAction(
+task('lpc:set-res-factor', 'Set reserve factor').setAction(
     async (_, { ethers }) => {
         const signer = (await ethers.getSigners())[0]
         const input = await inquirer.prompt([
