@@ -27,8 +27,6 @@ hh <HARDHAT_TASK> --network <NETWORK>
 ```
   emergency:pause            	Pauses the protocol
   emergency:unpause          	Unpauses the protocol
-  flatten                    	Flattens and prints contracts and their dependencies
-  help                       	Prints this message
   lpc:activate-res           	Activate Reserve asset
   lpc:config-res-as-collat   	Configure a reserve as collatoral
   lpc:deactivate-res         	Deactivate Reserve asset
