@@ -1,5 +1,5 @@
 import inquirer from 'inquirer'
-import { Input, Result } from '../types'
+import chalk from 'chalk'
 
 const menus = {
     main: {
@@ -15,6 +15,11 @@ const menus = {
             {
                 name: 'external contracts', value: 'contracts'
             },
+            new inquirer.Separator(),
+            {
+                name: chalk.red('quit'), value: 'quit' 
+            },
+            new inquirer.Separator()
         ]
     },
 
@@ -24,61 +29,64 @@ const menus = {
         choices: [
             { name: 'apps', value: 'apps' },
             { name: 'permissions', value: 'permissions' },
-            { name: 'external contracts', value: 'external' }
-        ]
-    },
-    apps: {
-        type: 'list',
-        name: 'apps',
-        choices: [
-            { name: 'agent:0', value: 'agent:0' },
-            { name: 'agent:1', value: 'agent:0' },
-            { name: 'conviction-voting', value: 'conviction-voting' },
-            { name: 'disputable-voting', value: 'disputable-voting' },
-            { name: 'token-manager', value: 'token-manager' },
-            { name: 'token-manager', value: 'token-manager' },
-            { name: 'acl', value: 'acl' }
+            { name: 'external contracts', value: 'contracts' }
         ]
     },
     user: {
         type: 'list',
         name: 'user',
-        choices: ['sign agreement', 'stake tokens', 'vote']
-    },
-    external: {
-        type: 'list',
-        name: 'user',
-        choices: []
+        choices: [
+            {
+                name: 'sign agreement',
+                value: 'sign'
+            },
+            {
+                name: 'stake tokens',
+                value: 'stake'
+            },
+            { name: 'vote', value: 'vote' }]
     }
-}
-
-/*
-            {name: 'agent:0', value: '0x1234'},
-            {name: 'agent:1', value: '0x1234'},
-            {name: 'conviction-voting', value: '0x1234'},
-            {name: 'disputable-voting', value: '0x1234'},
-            {name: 'token-manager', value: '0x1234'}},
-            {name: 'token-manager', value: '0x1234'}},
-            {name: 'acl', value: '0x1234'}'}
-*/
-
-const actions = {
-    handle: async () => {
-
-
-    },
-    sendTx: async () => { console.log('test') },
-    agent: async (input: Result) => {
-        await commands.doAppPrompt(input.name, input.value)
-        return 'main'
-        // dao.getAddress()
-    }
-
 }
 
 const commands = {
-    doAppPrompt: async (app: string, address: string) => {
-        console.log('do something with', app, address)
+    apps: async (input) => {
+        console.log('apps', input)
+        return 'main'
+    },
+    permissions: async (input) => {
+        console.log('permissions', input)
+        return 'main'
+    },
+    contracts: async (input) => {
+        console.log('contracts', input)
+        return 'main'
+    },
+    sign: async (input) => {
+        console.log('sign', input)
+        return 'main'
+    },
+    stake: async (input) => {
+        console.log('stake', input)
+        return 'main'
+    },
+    vote: async (input) => {
+        console.log('vote', input)
+        return 'main'
+    },
+}
+
+async function promptRepl(input: any) {
+
+    input === 'quit' ? process.exit(0) : null
+
+    let answer
+    // is the input a menu or command
+    if (menus.hasOwnProperty(input)) {
+        answer = await inquirer.prompt(menus[input])
+        await promptRepl((answer[input]))
+    } else {
+        answer = await commands[input]()
+        await promptRepl(answer)
     }
 }
 
@@ -86,25 +94,7 @@ const run = async () => {
     await promptRepl('main')
 }
 
-async function promptRepl(input: any) {
-    
-    console.log(input)
-    console.log(menus[input])
 
-    let responce: Input | Result
-    
-    // is the input a menu?
-    menus.hasOwnProperty(input)
-        ? responce = await inquirer.prompt(menus[input])
-        : await (async () => {
-            // handle command
-            const name = input.split(':')[0]
-            const res : Result = await inquirer.prompt(actions[name])
-            promptRepl((responce[input]))
-        })
-    console.log(responce)
-    await promptRepl((responce[input]))
-}
 
 run()
     .then(() => process.exit(0))
@@ -113,5 +103,3 @@ run()
         process.exit(1)
     })
 
-
-// When you're done
