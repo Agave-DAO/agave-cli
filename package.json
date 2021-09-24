@@ -1,27 +1,64 @@
 {
-  "name": "agave-agent-scripts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "name": "gardner",
+  "version": "0.0.1",
+  "description": "gardner CLI",
+  "private": true,
+  "types": "build/types/types.d.ts",
+  "bin": {
+    "gardner": "bin/gardner"
+  },
   "scripts": {
-    "faucet": "node ./scripts/agave-faucet/run.mjs",
-    "add-second-token": "node ./scripts/add-second-token/run.mjs",
-    "pause-lending-pool": "node ./scripts/pause-lending-pool/run.mjs",
-    "unpause-lending-pool": "node ./scripts/unpause-lending-pool/run.mjs",
-    "execute-vote": "node ./scripts/execute-vote/run"
+    "format": "prettier --write **/*.{js,ts,tsx,json}",
+    "lint": "tslint -p .",
+    "clean-build": "rm -rf ./build",
+    "compile": "tsc -p .",
+    "copy-templates": "if [ -e ./src/templates ]; then cp -a ./src/templates ./build/; fi",
+    "build": "yarn format && yarn lint && yarn clean-build && yarn compile && yarn copy-templates",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "watch": "jest --watch",
+    "snapupdate": "jest --updateSnapshot",
+    "coverage": "jest --coverage"
   },
+  "files": [
+    "tsconfig.json",
+    "tslint.json",
+    "build",
+    "LICENSE",
+    "readme.md",
+    "docs",
+    "bin"
+  ],
+  "license": "MIT",
   "dependencies": {
-    "eth-provider": "^0.9.3",
+    "@commonsswarm/evmcrispr": "^0.1.3",
+    "eth-provider": "^0.9.4",
     "ethereum-regex": "^1.1.13",
-    "ethers": "^5.4.5",
-    "inquirer": "^8.1.2",
-    "web3": "^1.5.2"
+    "ethers": "^5.4.7",
+    "gluegun": "latest",
+    "inquirer": "^8.1.5",
+    "inquirer-tree-prompt": "^1.1.2",
+    "rxjs": "^7.3.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "prettier": "2.3.2"
+    "@types/inquirer": "^8.1.2",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "jest": "^24.1.0",
+    "prettier": "^1.12.1",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
