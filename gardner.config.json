@@ -1,1 +1,2667 @@
-{"contracts":{"KeyStorage":{"address":"0xd4F76D0D27D27852CE6648a8625754FEa94b5FF4","abi":[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"role","type":"bytes32"},{"indexed":true,"internalType":"address","name":"account","type":"address"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"RoleGranted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"role","type":"bytes32"},{"indexed":true,"internalType":"address","name":"account","type":"address"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"RoleRevoked","type":"event"},{"inputs":[],"name":"DEFAULT_ADMIN_ROLE","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"},{"components":[{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"x","type":"tuple"},{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"y","type":"tuple"}],"internalType":"struct G2Operations.G2Point","name":"value","type":"tuple"}],"name":"adding","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"contractManager","outputs":[{"internalType":"contract ContractManager","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"deleteKey","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"finalizePublicKey","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"getAllPreviousPublicKeys","outputs":[{"components":[{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"x","type":"tuple"},{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"y","type":"tuple"}],"internalType":"struct G2Operations.G2Point[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"getCommonPublicKey","outputs":[{"components":[{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"x","type":"tuple"},{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"y","type":"tuple"}],"internalType":"struct G2Operations.G2Point","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"getPreviousPublicKey","outputs":[{"components":[{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"x","type":"tuple"},{"components":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"internalType":"struct Fp2Operations.Fp2Point","name":"y","type":"tuple"}],"internalType":"struct G2Operations.G2Point","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"}],"name":"getRoleAdmin","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"getRoleMember","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"}],"name":"getRoleMemberCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"grantRole","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"hasRole","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"schainHash","type":"bytes32"}],"name":"initPublicKeyInProgress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"contractsAddress","type":"address"}],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"renounceRole","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"revokeRole","outputs":[],"stateMutability":"nonpayable","type":"function"}]},"DEIProxy":{"address":"0x24440A076e1363B62b00463A447Fcc7AE1ee9999","abi":[{"inputs":[{"internalType":"address","name":"_dei_address","type":"address"},{"internalType":"address","name":"_collateral_address","type":"address"},{"internalType":"address","name":"_deus_address","type":"address"},{"internalType":"address","name":"_pool_collateral","type":"address"},{"internalType":"address","name":"_uniswap_router","type":"address"},{"internalType":"address[]","name":"_collateral2deus_path","type":"address[]"},{"internalType":"address[]","name":"_deus2collateral_path","type":"address[]"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"tokenIn","type":"address"},{"indexed":false,"internalType":"uint256","name":"amountOut","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"globalCollateralRatio","type":"uint256"}],"name":"Buy","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[{"components":[{"internalType":"uint256","name":"collateral_price","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"expire_block","type":"uint256"},{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"max_amount_in","type":"uint256"},{"internalType":"bytes[]","name":"sigs","type":"bytes[]"},{"internalType":"address[]","name":"path","type":"address[]"}],"internalType":"struct DEIProxy.ProxyInput","name":"proxy_input","type":"tuple"}],"name":"ERC202DEI","outputs":[{"internalType":"uint256","name":"dei_amount","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"collateral_price","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"expire_block","type":"uint256"},{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"max_amount_in","type":"uint256"},{"internalType":"bytes[]","name":"sigs","type":"bytes[]"},{"internalType":"address[]","name":"path","type":"address[]"}],"internalType":"struct DEIProxy.ProxyInput","name":"proxy_input","type":"tuple"}],"name":"Nativecoin2DEI","outputs":[{"internalType":"uint256","name":"dei_amount","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"address","name":"to","type":"address"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"deus_price_usd","type":"uint256"},{"internalType":"uint256","name":"col_price_usd","type":"uint256"},{"internalType":"uint256","name":"collateral_amount","type":"uint256"},{"internalType":"uint256","name":"col_ratio","type":"uint256"}],"internalType":"struct DEIProxy.MintFD_Params","name":"params","type":"tuple"}],"name":"calcMintFractionalDEI","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"collateral_price","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"expire_block","type":"uint256"},{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"max_amount_in","type":"uint256"},{"internalType":"bytes[]","name":"sigs","type":"bytes[]"},{"internalType":"address[]","name":"path","type":"address[]"}],"internalType":"struct DEIProxy.ProxyInput","name":"proxy_input","type":"tuple"}],"name":"collateral2DEI","outputs":[{"internalType":"uint256","name":"dei_amount","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"collateral2deus_path","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"collateral_address","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"collateral_missing_decimals_d18","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deadline","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"dei_address","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"deus2collateral_path","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deus_address","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"collateral_price","type":"uint256"}],"name":"getAmountInCollateral2DEI","outputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"collateral_price","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountInERC20ORNativecoin2DEI","outputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"global_collateral_ratio","type":"uint256"},{"internalType":"uint256","name":"amount_out","type":"uint256"},{"internalType":"uint256","name":"deus_price","type":"uint256"},{"internalType":"uint256","name":"collateral_price","type":"uint256"}],"name":"getAmountsForMint","outputs":[{"internalType":"uint256","name":"collateral_needed_amount","type":"uint256"},{"internalType":"uint256","name":"collateral_for_deus_amount","type":"uint256"},{"internalType":"uint256","name":"deus_amount","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool_collateral","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_dei_address","type":"address"},{"internalType":"address","name":"_collateral_address","type":"address"},{"internalType":"address","name":"_deus_address","type":"address"},{"internalType":"address","name":"_pool_collateral","type":"address"},{"internalType":"address","name":"_uniswap_router","type":"address"},{"internalType":"address[]","name":"_collateral2deus_path","type":"address[]"},{"internalType":"address[]","name":"_deus2collateral_path","type":"address[]"},{"internalType":"uint256","name":"_collateral_missing_decimals_d18","type":"uint256"}],"name":"setVariables","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"uniswap_router","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdrawERC20","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]},"Lottery":{"address":"0x84F163Cda1A13e6BcFf319fc773F51C086Ce56Ab","abi":[{"inputs":[{"internalType":"address","name":"_priceFeeAddress","type":"address"},{"internalType":"address","name":"_vrfCoordinator","type":"address"},{"internalType":"address","name":"_link","type":"address"},{"internalType":"uint256","name":"_fee","type":"uint256"},{"internalType":"bytes32","name":"_keyhash","type":"bytes32"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"bytes32","name":"requestId","type":"bytes32"}],"name":"RequestedRandomness","type":"event"},{"inputs":[],"name":"current_state","outputs":[{"internalType":"enum Lottery.STATE","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"endLottery","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"enter","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"entryFeeUSD","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"fee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getEntranceFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"keyhash","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"lastWinner","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"players","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"randomness","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"requestId","type":"bytes32"},{"internalType":"uint256","name":"randomness","type":"uint256"}],"name":"rawFulfillRandomness","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startLottery","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"winnerIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]},"revest":{"address":"0x564a2f41c076e0dc7D59e3A2aa90536B084e9756","abi":[{"inputs":[{"internalType":"address","name":"provider","type":"address"},{"internalType":"address","name":"weth","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"newFNFTId","type":"uint256"},{"indexed":true,"internalType":"uint256","name":"quantity","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"FNFTAddionalDeposited","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"asset","type":"address"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"},{"indexed":false,"internalType":"address","name":"trigger","type":"address"},{"indexed":false,"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"indexed":false,"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"FNFTAddressLockMinted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"},{"indexed":true,"internalType":"uint256","name":"newExtendedTime","type":"uint256"}],"name":"FNFTMaturityExtended","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256[]","name":"newFNFTId","type":"uint256[]"},{"indexed":true,"internalType":"uint256[]","name":"proportions","type":"uint256[]"},{"indexed":false,"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"FNFTSplit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"asset","type":"address"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"endTime","type":"uint256"},{"indexed":false,"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"indexed":false,"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"FNFTTimeLockMinted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"}],"name":"FNFTUnlocked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"primaryAsset","type":"address"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"},{"indexed":false,"internalType":"address","name":"compareTo","type":"address"},{"indexed":false,"internalType":"address","name":"oracleDispatch","type":"address"},{"indexed":false,"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"indexed":false,"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"FNFTValueLockMinted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"uint256","name":"fnftId","type":"uint256"},{"indexed":true,"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"FNFTWithdrawn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"role","type":"bytes32"},{"indexed":true,"internalType":"bytes32","name":"previousAdminRole","type":"bytes32"},{"indexed":true,"internalType":"bytes32","name":"newAdminRole","type":"bytes32"}],"name":"RoleAdminChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"role","type":"bytes32"},{"indexed":true,"internalType":"address","name":"account","type":"address"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"RoleGranted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"bytes32","name":"role","type":"bytes32"},{"indexed":true,"internalType":"address","name":"account","type":"address"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"RoleRevoked","type":"event"},{"inputs":[],"name":"ADDRESS_LOCK_INTERFACE_ID","outputs":[{"internalType":"bytes4","name":"","type":"bytes4"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"DEFAULT_ADMIN_ROLE","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"PAUSER_ROLE","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"fnftId","type":"uint256"},{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"depositAdditionalToFNFT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"erc20Fee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"fnftId","type":"uint256"},{"internalType":"uint256","name":"endTime","type":"uint256"}],"name":"extendFNFTMaturity","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"flatWeiFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getAddressesProvider","outputs":[{"internalType":"contract IAddressRegistry","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getERC20Fee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getFlatWeiFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"}],"name":"getRoleAdmin","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"getRoleMember","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"}],"name":"getRoleMemberCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"grantRole","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"hasRole","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"trigger","type":"address"},{"internalType":"bytes","name":"arguments","type":"bytes"},{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"mintAddressLock","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"endTime","type":"uint256"},{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"mintTimeLock","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"primaryAsset","type":"address"},{"internalType":"address","name":"compareTo","type":"address"},{"internalType":"uint256","name":"unlockValue","type":"uint256"},{"internalType":"bool","name":"unlockRisingEdge","type":"bool"},{"internalType":"address","name":"oracleDispatch","type":"address"},{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"quantities","type":"uint256[]"},{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pipeToContract","type":"address"},{"internalType":"uint256","name":"depositAmount","type":"uint256"},{"internalType":"uint256","name":"depositMul","type":"uint256"},{"internalType":"uint256","name":"split","type":"uint256"},{"internalType":"uint256","name":"depositStopTime","type":"uint256"},{"internalType":"bool","name":"maturityExtension","type":"bool"},{"internalType":"bool","name":"isMulti","type":"bool"},{"internalType":"bool","name":"nontransferrable","type":"bool"}],"internalType":"struct IRevest.FNFTConfig","name":"fnftConfig","type":"tuple"}],"name":"mintValueLock","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"renounceRole","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"account","type":"address"}],"name":"revokeRole","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"registry","type":"address"}],"name":"setAddressRegistry","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"erc20","type":"uint256"}],"name":"setERC20Fee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"wethFee","type":"uint256"}],"name":"setFlatWeiFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"fnftId","type":"uint256"},{"internalType":"uint256[]","name":"proportions","type":"uint256[]"},{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"splitFNFT","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"fnftId","type":"uint256"}],"name":"unlockFNFT","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"fnftId","type":"uint256"},{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"withdrawFNFT","outputs":[],"stateMutability":"nonpayable","type":"function"}]}},"daos":{"agave":"0x1888d15ead3B33ed2d110f22d56f4fC338dEFE52","agave_sb":""}}
+{
+    "contracts": {
+        "KeyStorage": {
+            "address": "0xd4F76D0D27D27852CE6648a8625754FEa94b5FF4",
+            "abi": [
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "sender",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "RoleGranted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "sender",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "RoleRevoked",
+                    "type": "event"
+                },
+                {
+                    "inputs": [],
+                    "name": "DEFAULT_ADMIN_ROLE",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "x",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "y",
+                                    "type": "tuple"
+                                }
+                            ],
+                            "internalType": "struct G2Operations.G2Point",
+                            "name": "value",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "adding",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "contractManager",
+                    "outputs": [
+                        {
+                            "internalType": "contract ContractManager",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "deleteKey",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "finalizePublicKey",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getAllPreviousPublicKeys",
+                    "outputs": [
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "x",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "y",
+                                    "type": "tuple"
+                                }
+                            ],
+                            "internalType": "struct G2Operations.G2Point[]",
+                            "name": "",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getCommonPublicKey",
+                    "outputs": [
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "x",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "y",
+                                    "type": "tuple"
+                                }
+                            ],
+                            "internalType": "struct G2Operations.G2Point",
+                            "name": "",
+                            "type": "tuple"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getPreviousPublicKey",
+                    "outputs": [
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "x",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "a",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "b",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Fp2Operations.Fp2Point",
+                                    "name": "y",
+                                    "type": "tuple"
+                                }
+                            ],
+                            "internalType": "struct G2Operations.G2Point",
+                            "name": "",
+                            "type": "tuple"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getRoleAdmin",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getRoleMember",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getRoleMemberCount",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "grantRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "hasRole",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "schainHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "initPublicKeyInProgress",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "contractsAddress",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "initialize",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "renounceRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "revokeRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                }
+            ]
+        },
+        "DEIProxy": {
+            "address": "0x24440A076e1363B62b00463A447Fcc7AE1ee9999",
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_dei_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_collateral_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_deus_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_pool_collateral",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_uniswap_router",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "_collateral2deus_path",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "_deus2collateral_path",
+                            "type": "address[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "tokenIn",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "amountOut",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "globalCollateralRatio",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Buy",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "previousOwner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "OwnershipTransferred",
+                    "type": "event"
+                },
+                {
+                    "inputs": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "collateral_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deus_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expire_block",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount_out",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "max_amount_in",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes[]",
+                                    "name": "sigs",
+                                    "type": "bytes[]"
+                                },
+                                {
+                                    "internalType": "address[]",
+                                    "name": "path",
+                                    "type": "address[]"
+                                }
+                            ],
+                            "internalType": "struct DEIProxy.ProxyInput",
+                            "name": "proxy_input",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "ERC202DEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "dei_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "collateral_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deus_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expire_block",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount_out",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "max_amount_in",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes[]",
+                                    "name": "sigs",
+                                    "type": "bytes[]"
+                                },
+                                {
+                                    "internalType": "address[]",
+                                    "name": "path",
+                                    "type": "address[]"
+                                }
+                            ],
+                            "internalType": "struct DEIProxy.ProxyInput",
+                            "name": "proxy_input",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "Nativecoin2DEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "dei_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "to",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "approve",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deus_price_usd",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "col_price_usd",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "collateral_amount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "col_ratio",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct DEIProxy.MintFD_Params",
+                            "name": "params",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "calcMintFractionalDEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "pure",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "collateral_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deus_price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expire_block",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount_out",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "max_amount_in",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes[]",
+                                    "name": "sigs",
+                                    "type": "bytes[]"
+                                },
+                                {
+                                    "internalType": "address[]",
+                                    "name": "path",
+                                    "type": "address[]"
+                                }
+                            ],
+                            "internalType": "struct DEIProxy.ProxyInput",
+                            "name": "proxy_input",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "collateral2DEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "dei_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "collateral2deus_path",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "collateral_address",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "collateral_missing_decimals_d18",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "deadline",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "dei_address",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "deus2collateral_path",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "deus_address",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount_out",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deus_price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateral_price",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getAmountInCollateral2DEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount_out",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deus_price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateral_price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "path",
+                            "type": "address[]"
+                        }
+                    ],
+                    "name": "getAmountInERC20ORNativecoin2DEI",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "global_collateral_ratio",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount_out",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deus_price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateral_price",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getAmountsForMint",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "collateral_needed_amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateral_for_deus_amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deus_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "pool_collateral",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "renounceOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_dei_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_collateral_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_deus_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_pool_collateral",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_uniswap_router",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "_collateral2deus_path",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "_deus2collateral_path",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_collateral_missing_decimals_d18",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "setVariables",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "transferOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "uniswap_router",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "to",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "withdrawERC20",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "stateMutability": "payable",
+                    "type": "receive"
+                }
+            ]
+        },
+        "Lottery": {
+            "address": "0x84F163Cda1A13e6BcFf319fc773F51C086Ce56Ab",
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_priceFeeAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_vrfCoordinator",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_link",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_fee",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "_keyhash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "previousOwner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "OwnershipTransferred",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "bytes32",
+                            "name": "requestId",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "RequestedRandomness",
+                    "type": "event"
+                },
+                {
+                    "inputs": [],
+                    "name": "current_state",
+                    "outputs": [
+                        {
+                            "internalType": "enum Lottery.STATE",
+                            "name": "",
+                            "type": "uint8"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "endLottery",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "enter",
+                    "outputs": [],
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "entryFeeUSD",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "fee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "getEntranceFee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "keyhash",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "lastWinner",
+                    "outputs": [
+                        {
+                            "internalType": "address payable",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "players",
+                    "outputs": [
+                        {
+                            "internalType": "address payable",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "randomness",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "requestId",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "randomness",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "rawFulfillRandomness",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "renounceOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "startLottery",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "transferOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "winnerIndex",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ]
+        },
+        "revest": {
+            "address": "0x564a2f41c076e0dc7D59e3A2aa90536B084e9756",
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "provider",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "weth",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "newFNFTId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FNFTAddionalDeposited",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "trigger",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "indexed": false,
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "FNFTAddressLockMinted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "newExtendedTime",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FNFTMaturityExtended",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256[]",
+                            "name": "newFNFTId",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256[]",
+                            "name": "proportions",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FNFTSplit",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "indexed": false,
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "FNFTTimeLockMinted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FNFTUnlocked",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "primaryAsset",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "compareTo",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "oracleDispatch",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "indexed": false,
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "FNFTValueLockMinted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FNFTWithdrawn",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "previousOwner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "OwnershipTransferred",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "previousAdminRole",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "newAdminRole",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "RoleAdminChanged",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "sender",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "RoleGranted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "internalType": "address",
+                            "name": "sender",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "RoleRevoked",
+                    "type": "event"
+                },
+                {
+                    "inputs": [],
+                    "name": "ADDRESS_LOCK_INTERFACE_ID",
+                    "outputs": [
+                        {
+                            "internalType": "bytes4",
+                            "name": "",
+                            "type": "bytes4"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "DEFAULT_ADMIN_ROLE",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "PAUSER_ROLE",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "depositAdditionalToFNFT",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "erc20Fee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "extendFNFTMaturity",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "flatWeiFee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "getAddressesProvider",
+                    "outputs": [
+                        {
+                            "internalType": "contract IAddressRegistry",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "getERC20Fee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "getFlatWeiFee",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getRoleAdmin",
+                    "outputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getRoleMember",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "getRoleMemberCount",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "grantRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "hasRole",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "trigger",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "arguments",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "recipients",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "mintAddressLock",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "recipients",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "mintTimeLock",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "primaryAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "compareTo",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "unlockValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "unlockRisingEdge",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracleDispatch",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "recipients",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "quantities",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "pipeToContract",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositMul",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "split",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "depositStopTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "maturityExtension",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "isMulti",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "nontransferrable",
+                                    "type": "bool"
+                                }
+                            ],
+                            "internalType": "struct IRevest.FNFTConfig",
+                            "name": "fnftConfig",
+                            "type": "tuple"
+                        }
+                    ],
+                    "name": "mintValueLock",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "renounceOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "renounceRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "role",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "revokeRole",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "registry",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "setAddressRegistry",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "erc20",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "setERC20Fee",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "wethFee",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "setFlatWeiFee",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "proportions",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "splitFNFT",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes4",
+                            "name": "interfaceId",
+                            "type": "bytes4"
+                        }
+                    ],
+                    "name": "supportsInterface",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "transferOwnership",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "unlockFNFT",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fnftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "quantity",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "withdrawFNFT",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                }
+            ]
+        }
+    },
+    "daos": {
+        "agave": "0x1888d15ead3B33ed2d110f22d56f4fC338dEFE52",
+        "agave_sb": ""
+    }
+}

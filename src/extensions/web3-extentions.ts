@@ -3,6 +3,9 @@ import ethProvider from 'eth-provider'
 import ethereumRegex from 'ethereum-regex'
 import { callTaoAgent } from './crispr-extentions'
 import getFuncSig from './abi-extentions'
+// import { EVMcrispr } from "@commonsswarm/evmcrispr";
+// import {abis, appIDs} from '../abi/apps'
+// import config from '../../gardner.config.json'
 
 export const useFrame = () => {
     const provider = new ethers.providers.Web3Provider(ethProvider())
@@ -32,7 +35,6 @@ export const validateAddress = () => {
 }
 
 export const sendTransaction = async (address, abi, type, fragment, args) => {
-
     const functionName = fragment.name
     if (type === 'local') {
         const tx = await callContractFrame(address, abi, functionName, args, useFrame())
@@ -47,3 +49,20 @@ export const sendTransaction = async (address, abi, type, fragment, args) => {
         )
     }
 }
+
+
+
+// export const getDaoApp = async (appName: string, number: Number = 0) => {
+//     // connect to the dao
+//     // using appID get address taking into account multiple apps of same type
+//     // using name get abi
+//     // return new ethers contract
+
+//     const evmcrispr = await EVMcrispr.create(useFrame(), config.daos.agave);
+
+
+//     const appID =  appIDs[appName]
+//     const abi = abis[appName]
+//     address
+//     //return new ethers.Contract()
+// }
