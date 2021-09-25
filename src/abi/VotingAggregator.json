@@ -1,0 +1,60 @@
+[
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_sourceAddr",
+                "type": "address"
+            },
+            {
+                "name": "_sourceType",
+                "type": "uint8"
+            },
+            {
+                "name": "_weight",
+                "type": "uint256"
+            }
+        ],
+        "name": "addPowerSource",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "name": "_symbol",
+                "type": "string"
+            },
+            {
+                "name": "_decimals",
+                "type": "uint8"
+            }
+        ],
+        "name": "initialize",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "ADD_POWER_SOURCE_ROLE",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
+        "type": "function"
+    }
+]
