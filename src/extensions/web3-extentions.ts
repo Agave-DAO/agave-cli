@@ -1,6 +1,8 @@
 import { ethers, Signer, Contract } from 'ethers'
 import ethProvider from 'eth-provider'
 import ethereumRegex from 'ethereum-regex'
+import { callTaoAgent } from './crispr-extentions'
+import getFuncSig from './abi-extentions'
 
 export const useFrame = () => {
     const provider = new ethers.providers.Web3Provider(ethProvider())
@@ -26,5 +28,22 @@ export const validateAddress = () => {
             return test
         }
         return 'Invalid address'
+    }
+}
+
+export const sendTransaction = async (address, abi, type, fragment, args) => {
+
+    const functionName = fragment.name
+    if (type === 'local') {
+        const tx = await callContractFrame(address, abi, functionName, args, useFrame())
+        console.log(tx._isBigNumber ? console.log(tx.toString()) : console.log(tx))
+
+    } else {
+        await callTaoAgent(
+            getFuncSig(fragment),
+            address,
+            args,
+            functionName
+        )
     }
 }

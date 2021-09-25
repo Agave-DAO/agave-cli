@@ -2,9 +2,11 @@ import config from "../../gardner.config.json"
 import chalk from "chalk"
 import inquirer from "inquirer"
 import addContract from "./addContract"
-import { table } from "../extensions/cli-extentions"
+import { table as confirmTable } from "../extensions/cli-extentions"
 import getFunctionArgs from "./getFunctionArgs"
-
+import { sendTransaction } from "../extensions/web3-extentions"
+import { table } from "console"
+import report from 'yurnalist'
 
 
 const callContract = async () => {
@@ -97,11 +99,52 @@ const callContract = async () => {
     typeOfSigner = type['ofSigner']
 
     // 8. Display the transaction to the user
-    console.log(table(typeOfSigner, address, funcName, args).toString())
+    console.log(confirmTable(typeOfSigner, address, funcName, args).toString())
+
+    // 9. ask confirm
+    const execute: any = await inquirer.prompt({
+        type: 'confirm',
+        name: 'action',
+        message: 'Send Transaction'
+    })
+
+    if (execute.action === false) {
+        process.exit(0)
+    }
 
 
-    console.log(address)
+    // 10. submit transaction
+    try {
+        report.info('Sending Transaction...')
+        await sendTransaction(address, abi, typeOfSigner, funcFragment, args)
+        report.success('Done!')
+    } catch (error) {
+        if (error.status !== undefined) {
+            report.error(error.reason)
+            table(
+                [
+                    ['Code', error.code],
+                    ['Status', error.status],
+                    ['Tx Hash', error.transactionHash]
+                ]
+            )
+            console.log(
+                `https://dashboard.tenderly.co/tx/rinkeby/${error.transactionHash}`
+            )
+        } else {
+            report.error('Failed for some reason...')
+            report.inspect(error)
+            //console.error(error)
+        }
+        process.exit(1)
+    }
+
     process.exit(0)
 }
+
+
+
+
+
 
 export default callContract
