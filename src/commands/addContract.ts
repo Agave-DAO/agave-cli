@@ -2,7 +2,7 @@ import config from "../../gardner.config.json"
 import inquirer from 'inquirer'
 import ethereumRegex from "ethereum-regex"
 import { writeFileSync } from 'fs'
-import callContract from "./callContract"
+import contracts from "./contracts"
 
 export default async () => {
     const contractResponse = await inquirer.prompt([
@@ -42,5 +42,5 @@ export default async () => {
     writeFileSync('./gardner.config.json', JSON.stringify(config))
 
     // go back to contracts menu
-    await callContract()
+    await contracts()
 }

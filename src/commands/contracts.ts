@@ -9,7 +9,7 @@ import { table } from "console"
 import report from 'yurnalist'
 
 
-const callContract = async () => {
+const contracts = async () => {
     let abi
     let address
     let funcName
@@ -141,4 +141,4 @@ const callContract = async () => {
 
 
 
-export default callContract
+export default contracts

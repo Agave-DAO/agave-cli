@@ -1,4 +1,4 @@
-import callContract from './callContract'
+import contracts from './contracts'
 import apps from './apps'
 import permissions from './permissions'
 import sign from './sign'
@@ -12,6 +12,6 @@ export default {
     sign,
     stake,
     vote,
-    callContract,
+    contracts,
     simulation
 }

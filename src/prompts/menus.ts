@@ -15,6 +15,9 @@ export const menus = {
             {
                 name: 'external contracts', value: 'contracts'
             },
+            {
+                name: 'run simulation', value: 'simulation'
+            },
             new inquirer.Separator(),
             {
                 name: chalk.red('quit'), value: 'quit'
@@ -43,20 +46,6 @@ export const menus = {
                 value: 'stake'
             },
             { name: 'vote', value: 'vote' }
-        ]
-    },
-    contracts: {
-        type: 'list',
-        name: 'contracts',
-        choices: [
-            {
-                name: 'call contract',
-                value: 'callContract'
-            },
-            {
-                name: 'run simulation',
-                value: 'simulation'
-            }
         ]
     }
 };

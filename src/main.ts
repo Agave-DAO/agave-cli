@@ -1,6 +1,6 @@
 import inquirer from 'inquirer'
 import commands  from './commands/index'
-import { menus } from './menus'
+import { menus } from './prompts/menus'
 
 async function promptRepl(input: any) {
     input === 'quit' ? process.exit(0) : null
