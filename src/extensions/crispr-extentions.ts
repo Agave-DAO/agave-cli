@@ -2,7 +2,7 @@ import { EVMcrispr } from '@commonsswarm/evmcrispr'
 import { ethers } from 'ethers'
 import config from '../../gardner.config.json'
 import { useFrame } from './web3-extentions'
-
+import report from 'yurnalist'
 export const callTaoAgent = async (
   signature: string,
   TO: string,
@@ -18,12 +18,12 @@ export const callTaoAgent = async (
   )
 }
 
-export const getDaoCache = async () => {
+const daoCache = async () => {
   const evm = await EVMcrispr.create(useFrame(), config.daos.agave);
   return evm.appCache
 }
 
-export const daoContext = cache => {
+export const getDaoContext = cache => {
   const context = []
   for (let [key, value] of cache) {
     context.push({
@@ -32,4 +32,15 @@ export const daoContext = cache => {
     })
   }
   return context
+}
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+export const getDaoCache = (numberOfRetry) => {
+  return daoCache().catch(error => {
+      report.error('Error fetching DAO cache')
+    if(numberOfRetry > 0) {
+        report.warn('retrying in 5 seconds')
+      return delay(5000).then(() => getDaoCache(numberOfRetry - 1));
+    }
+  });
 }
