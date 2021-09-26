@@ -3,7 +3,8 @@ import ethProvider from 'eth-provider'
 import ethereumRegex from 'ethereum-regex'
 import { callTaoAgent } from './crispr-extentions'
 import getFuncSig from './abi-extentions'
-import  report  from 'yurnalist'
+import report from 'yurnalist'
+import { Result } from '@ethersproject/abi'
 // import { EVMcrispr } from "@commonsswarm/evmcrispr";
 // import {abis, appIDs} from '../abi/apps'
 // import config from '../../gardner.config.json'
@@ -51,7 +52,58 @@ export const sendTransaction = async (address, abi, type, fragment, args) => {
     }
 }
 
+export const getCollateralRequirement = async (agreement: Contract, disputableVoting: Contract) => {
+    const events = await filterContractEvents(
+        agreement,
+        "CollateralRequirementChanged"
+    );
 
+    const lastEvent = events
+        .filter(({ args }) => addressesEqual(args.disputable, disputableVoting.address))
+        .pop();
+
+    if (!lastEvent) {
+        throw new Error("Collateral requeriment id not found");
+    }
+    return await agreement.getCollateralRequirement(
+        disputableVoting.address,
+        lastEvent.args.collateralRequirementId
+    );
+}
+
+export const filterContractEvents = (
+    contract: Contract,
+    selectedFilter: string,
+    transactionHash?: string
+): Promise<Result> => {
+    return new Promise((resolve, reject) => {
+        const filter = contract.filters[selectedFilter];
+
+        if (!filter) {
+            reject(new Error(`Selected filter ${selectedFilter} doesn't exists`));
+        }
+
+        contract
+            .queryFilter(filter())
+            .then((events) => {
+                if (transactionHash) {
+                    const filteredEvent = events.filter(
+                        (event) => event.transactionHash === transactionHash
+                    );
+                    resolve(filteredEvent[0]?.args);
+                } else {
+                    resolve(events);
+                }
+            })
+            .catch((err) => reject(err));
+    });
+};
+
+export const addressesEqual = (first, second) => {
+    first = first && ethers.utils.getAddress(first);
+    second = second && ethers.utils.getAddress(second);
+    return first === second;
+};
 
 // export const getDaoApp = async (appName: string, number: Number = 0) => {
 //     // connect to the dao
