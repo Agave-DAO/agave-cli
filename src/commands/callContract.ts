@@ -114,32 +114,26 @@ const callContract = async () => {
 
 
     // 10. submit transaction
+    const spinner = report.activity()
     try {
-        report.info('Sending Transaction...')
+        spinner.tick('Sending Transaction...')
         await sendTransaction(address, abi, typeOfSigner, funcFragment, args)
-        report.success('Done!')
+        spinner.end()
     } catch (error) {
         if (error.status !== undefined) {
             report.error(error.reason)
-            table(
-                [
-                    ['Code', error.code],
-                    ['Status', error.status],
-                    ['Tx Hash', error.transactionHash]
-                ]
-            )
             console.log(
                 `https://dashboard.tenderly.co/tx/rinkeby/${error.transactionHash}`
             )
         } else {
             report.error('Failed for some reason...')
             report.inspect(error)
-            //console.error(error)
         }
         process.exit(1)
     }
 
-    process.exit(0)
+    return 'main'
+
 }
 
 

@@ -3,6 +3,7 @@ import ethProvider from 'eth-provider'
 import ethereumRegex from 'ethereum-regex'
 import { callTaoAgent } from './crispr-extentions'
 import getFuncSig from './abi-extentions'
+import  report  from 'yurnalist'
 // import { EVMcrispr } from "@commonsswarm/evmcrispr";
 // import {abis, appIDs} from '../abi/apps'
 // import config from '../../gardner.config.json'
@@ -38,7 +39,7 @@ export const sendTransaction = async (address, abi, type, fragment, args) => {
     const functionName = fragment.name
     if (type === 'local') {
         const tx = await callContractFrame(address, abi, functionName, args, useFrame())
-        console.log(tx._isBigNumber ? console.log(tx.toString()) : console.log(tx))
+        report.command(tx)
 
     } else {
         await callTaoAgent(
